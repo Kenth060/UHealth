@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/pesoVista"
+    android:layout_width="410dp"
+    android:layout_height="350dp"
+    android:background="@drawable/borde"
+    tools:context=".View.MainActivity">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/iconAtrasPeso"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/ic_back"
+        android:backgroundTint="@color/Blue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/abel"
+        android:text="@string/peso"
+        android:textAlignment="center"
+        android:textColor="@color/textologin"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/iconAtrasPeso"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <NumberPicker
+        android:id="@+id/numberPicker1"
+        android:layout_width="100dp"
+        android:layout_height="150dp"
+        android:background="@color/Blue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.283"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="3dp"
+        android:layout_height="3dp"
+        android:layout_marginTop="180dp"
+        android:background="@drawable/circulo_view"
+        android:backgroundTint="@color/textologin"
+        android:contentDescription="."
+        app:layout_constraintEnd_toStartOf="@+id/numberPicker2"
+        app:layout_constraintStart_toEndOf="@+id/numberPicker1"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText" />
+
+    <NumberPicker
+        android:id="@+id/numberPicker2"
+        android:layout_width="100dp"
+        android:layout_height="150dp"
+        android:background="@color/Blue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.147"
+        app:layout_constraintStart_toEndOf="@+id/numberPicker1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textview2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="170dp"
+        android:fontFamily="@font/abel"
+        android:gravity="center"
+        android:text="0"
+        android:textColor="@color/textologin"
+        android:textColorHint="@color/textologin"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/numberPicker2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="3dp"
+        android:layout_height="3dp"
+
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="180dp"
+        android:background="@drawable/circulo_view"
+        android:backgroundTint="@color/textologin"
+        android:contentDescription="."
+        app:layout_constraintStart_toEndOf="@+id/textview2"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/textview3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="170dp"
+        android:fontFamily="@font/abel"
+        android:gravity="center"
+        android:text="0"
+        android:textColor="@color/textologin"
+        android:textColorHint="@color/textologin"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/view2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="170dp"
+        android:fontFamily="@font/abel"
+        android:gravity="center"
+        android:text="lbs"
+        android:textColor="@color/textologin"
+        android:textColorHint="@color/textologin"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/textview3">
+
+    </TextView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnCancelarpeso"
+        android:layout_width="95dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="205dp"
+        android:background="@color/Blue"
+        android:fontFamily="@font/abel"
+        android:text="@string/cancelar"
+        android:textColor="@color/textologin"
+        android:textSize="11sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnAceptarpeso"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/numberPicker1"
+        app:layout_constraintVertical_bias="0.507" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnAceptarpeso"
+        android:layout_width="95dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="50dp"
+        android:background="@color/Blue"
+        android:fontFamily="@font/abel"
+        android:text="@string/aceptar"
+        android:textColor="@color/textologin"
+        android:textSize="11sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnCancelarpeso"
+        app:layout_constraintTop_toBottomOf="@+id/numberPicker2"
+        app:layout_constraintVertical_bias="0.507" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo"
+    tools:context=".View.CrearPerfil">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imgPerfil"
+        android:layout_width="200dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="35dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_uhealth"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtImgPerfil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
+        android:fontFamily="@font/courgette"
+        android:text="@string/app_name"
+        android:textColor="@color/texto"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@id/imgPerfil"
+        app:layout_constraintStart_toStartOf="@id/imgPerfil"
+        app:layout_constraintTop_toTopOf="@id/imgPerfil" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtBckNombrePerfil"
+        android:layout_width="@dimen/anchoCajaTexto"
+        android:layout_height="@dimen/altoCajaTexto"
+        android:layout_marginTop="@dimen/margen6"
+        android:textColorHint="@color/textologin"
+        app:boxStrokeColor="@color/Blue"
+        app:counterEnabled="true"
+        app:counterMaxLength="30"
+        app:counterTextColor="@color/Blue"
+        app:helperText="Requerido"
+        app:helperTextTextColor="@color/textologin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imgPerfil">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtNombrePerfil"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/alto1"
+            android:drawableLeft="@drawable/ic_user"
+            android:drawablePadding="8dp"
+            android:hint="@string/nombres"
+            android:inputType="textPersonName"
+            android:textColor="@color/textologin"
+            android:textColorHighlight="@color/textologin"
+            android:textColorHint="@color/textologin"
+            android:textColorLink="@color/textologin" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtBckApellidoPerfil"
+        android:layout_width="@dimen/anchoCajaTexto"
+        android:layout_height="@dimen/altoCajaTexto"
+        android:layout_marginTop="@dimen/margen6"
+        android:textColorHint="@color/textologin"
+        app:boxStrokeColor="@color/Blue"
+        app:counterEnabled="true"
+        app:counterMaxLength="30"
+        app:counterTextColor="@color/Blue"
+        app:helperText="Requerido"
+        app:helperTextTextColor="@color/textologin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtBckNombrePerfil">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtApellidoPerfil"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/alto1"
+            android:drawableLeft="@drawable/ic_user"
+            android:drawablePadding="8dp"
+            android:hint="@string/apellidos"
+            android:inputType="textPersonName"
+            android:textColor="@color/textologin"
+            android:textColorHighlight="@color/textologin"
+            android:textColorHint="@color/textologin"
+            android:textColorLink="@color/textologin" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/TextViewActividadFechaNac"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margen"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/background_textview"
+        android:fontFamily="@font/abel"
+        android:gravity="center"
+        android:hint="fecha de Nacimiento"
+        android:paddingStart="8dp"
+        android:textColorHint="@color/textologin"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:drawableLeftCompat="@drawable/ic_calendar"
+        app:layout_constraintEnd_toStartOf="@+id/TextViewActividadGenero"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtBckApellidoPerfil" />
+
+    <TextView
+        android:id="@+id/TextViewActividadGenero"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="@dimen/margen"
+        android:background="@drawable/background_textview"
+        android:fontFamily="@font/abel"
+        android:gravity="center"
+        android:hint="Genero"
+        android:textColorHint="@color/textologin"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:drawableEndCompat="@drawable/posicion_drawable_arrow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/TextViewActividadFechaNac"
+        app:layout_constraintTop_toBottomOf="@+id/txtBckApellidoPerfil" />
+
+    <TextView
+        android:id="@+id/TextViewActividadAltura"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margen"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/background_textview"
+        android:fontFamily="@font/abel"
+        android:gravity="center"
+        android:hint="@string/altura"
+        android:textColorHint="@color/textologin"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:drawableEndCompat="@drawable/arrow2"
+        app:layout_constraintEnd_toStartOf="@+id/TextViewActividadPeso"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TextViewActividadFechaNac" />
+
+    <TextView
+        android:id="@+id/TextViewActividadPeso"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="@dimen/margen"
+        android:background="@drawable/background_textview"
+        android:fontFamily="@font/abel"
+        android:gravity="center"
+        android:hint="@string/peso"
+        android:textColorHint="@color/textologin"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:drawableEndCompat="@drawable/arrow2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/TextViewActividadAltura"
+        app:layout_constraintTop_toBottomOf="@+id/TextViewActividadGenero" />
+
+
+    <TextView
+        android:id="@+id/TextViewActividadEnfermedad"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="156dp"
+        android:background="@drawable/background_textview"
+        android:fontFamily="@font/abel"
+        android:gravity="center"
+        android:hint="@string/enfermedad"
+        android:textColorHint="@color/textologin"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:drawableEndCompat="@drawable/posicion_drawable_arrow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtBckApellidoPerfil" />
+
+    <Button
+        android:id="@+id/btnCrearPerfil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/Blue"
+        android:text="@string/guardar"
+        android:textColor="@color/textologin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TextViewActividadEnfermedad" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

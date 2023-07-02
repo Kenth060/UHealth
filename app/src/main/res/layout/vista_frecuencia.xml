@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/alturaVista"
+    android:layout_width="410dp"
+    android:layout_height="350dp"
+    android:background="@drawable/background_ventanas"
+    tools:context=".View.MainActivity">
+
+
+    <TextView
+        android:id="@+id/textviewPies"
+        android:layout_width="41dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="2dp"
+        android:gravity="center"
+        android:textColorHint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/number_picker_minutos"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.418" />
+
+    <TextView
+        android:id="@+id/textviewPulgadas"
+        android:layout_width="41dp"
+        android:layout_height="44dp"
+        android:gravity="center"
+        android:textColorHint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/textviewPies"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.418" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/iconAtrasAltura"
+        android:layout_width="62dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/arrow2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.009"
+
+        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="110dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Hora y minutos"
+        android:textColorHint="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_marginTop="148dp"
+        android:background="@drawable/circulo_view"
+
+        android:contentDescription="."
+        app:layout_constraintEnd_toStartOf="@+id/number_picker_minutos"
+        app:layout_constraintStart_toEndOf="@+id/number_picker_hora"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <NumberPicker
+        android:id="@+id/number_picker_hora"
+        android:layout_width="104dp"
+        android:layout_height="168dp"
+        android:layout_marginStart="40dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iconAtrasAltura" />
+
+    <NumberPicker
+        android:id="@+id/number_picker_minutos"
+        android:layout_width="104dp"
+        android:layout_height="168dp"
+        android:layout_marginStart="16dp"
+
+        android:layout_marginTop="66dp"
+        app:layout_constraintStart_toEndOf="@+id/number_picker_hora"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnCancelarAltura"
+        android:layout_width="95dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="128dp"
+        android:layout_marginTop="40dp"
+        android:background="@color/Blue"
+        android:text="Cancelar"
+        android:textColor="@color/textologin"
+        android:textSize="10sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/number_picker_hora" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnAceptarAltura"
+        android:layout_width="95dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="40dp"
+        android:background="@color/Blue"
+        android:text="Aceptar"
+        android:textColor="@color/textologin"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.309"
+        app:layout_constraintStart_toEndOf="@+id/btnCancelarAltura"
+        app:layout_constraintTop_toBottomOf="@+id/number_picker_minutos"
+        app:layout_constraintVertical_bias="0.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

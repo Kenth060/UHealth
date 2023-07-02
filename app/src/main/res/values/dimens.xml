@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="Ancho1">40dp</dimen>
+    <dimen name="margen">35dp</dimen>
+    <dimen name="margen1">92dp</dimen>
+    <dimen name="margen2">50dp</dimen>
+    <dimen name="margen3">30dp</dimen>
+    <dimen name="margen4">54dp</dimen>
+    <dimen name="anchoCajaTexto">300dp</dimen>
+    <dimen name="altoCajaTexto">80dp</dimen>
+    <dimen name="margen5">40dp</dimen>
+    <dimen name="margen6">20dp</dimen>
+    <dimen name="alto1">55dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="widthcardviewuser">68dp</dimen>
+</resources>

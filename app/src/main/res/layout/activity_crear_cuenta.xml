@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo"
+    tools:context=".View.CrearCuenta">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/abCrearCuenta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/tbCrearCuenta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/Blue"
+            app:titleTextColor="@color/textologin" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imgSignIn"
+        android:layout_width="200dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="40dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_uhealth"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/abCrearCuenta" />
+
+    <TextView
+        android:id="@+id/txtImgLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
+        android:fontFamily="@font/courgette"
+        android:text="@string/app_name"
+        android:textColor="@color/texto"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@id/imgSignIn"
+        app:layout_constraintStart_toStartOf="@id/imgSignIn"
+        app:layout_constraintTop_toTopOf="@id/imgSignIn" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/FondotxtCrearCorreo"
+        android:layout_width="@dimen/anchoCajaTexto"
+        android:layout_height="@dimen/altoCajaTexto"
+        android:layout_marginTop="@dimen/margen6"
+        android:textColorHint="@color/textologin"
+        app:boxStrokeColor="@color/Blue"
+        app:counterEnabled="true"
+        app:counterMaxLength="50"
+        app:counterTextColor="@color/Blue"
+        app:helperText="@string/HelperText"
+        app:helperTextTextColor="@color/textologin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imgSignIn">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtCrearCorreo"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:autoLink="email"
+            android:drawableStart="@drawable/ic_correo"
+            android:drawablePadding="8dp"
+            android:hint="@string/correo"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/textologin"
+            android:textColorHighlight="@color/textologin"
+            android:textColorHint="@color/textologin"
+            android:textColorLink="@color/textologin" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/FondotxtCrearContraseña"
+        android:layout_width="@dimen/anchoCajaTexto"
+        android:layout_height="@dimen/altoCajaTexto"
+        android:layout_marginTop="@dimen/margen6"
+        android:textColorHint="@color/textologin"
+        app:boxStrokeColor="@color/Blue"
+        app:counterEnabled="true"
+        app:counterMaxLength="20"
+        app:counterTextColor="@color/Blue"
+        app:endIconMode="password_toggle"
+        app:endIconTint="@color/Blue"
+        app:helperText="@string/HelperText"
+        app:helperTextEnabled="true"
+        app:helperTextTextColor="@color/textologin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/FondotxtCrearCorreo">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtCrearContraseña"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:autoLink="email"
+            android:drawableStart="@drawable/ic_lock"
+            android:drawablePadding="8dp"
+            android:hint="@string/Contraseña"
+            android:inputType="textPassword"
+            android:textColor="@color/textologin"
+            android:textColorHighlight="@color/textologin"
+            android:textColorHint="@color/textologin"
+            android:textColorLink="@color/textologin" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/FondotxtConfContraseña"
+        android:layout_width="@dimen/anchoCajaTexto"
+        android:layout_height="@dimen/altoCajaTexto"
+        android:layout_marginTop="@dimen/margen6"
+        app:boxStrokeColor="@color/Blue"
+        android:textColorHint="@color/textologin"
+        app:counterEnabled="true"
+        app:counterMaxLength="20"
+        app:counterTextColor="@color/Blue"
+        app:helperText="@string/HelperText"
+        app:helperTextEnabled="true"
+        app:helperTextTextColor="@color/textologin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/FondotxtCrearContraseña"
+        android:drawableStart="@drawable/ic_lock"
+        app:endIconMode="password_toggle"
+        app:endIconTint="@color/Blue">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtConfirmContraseña"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:autoLink="email"
+            android:drawableStart="@drawable/ic_lock"
+            android:drawablePadding="8dp"
+            android:hint="@string/ConfirmarContraseña"
+            android:inputType="textPassword"
+            android:textColor="@color/textologin"
+            android:textColorHighlight="@color/textologin"
+            android:textColorHint="@color/textologin"
+            android:textColorLink="@color/textologin"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnCrearCuenta"
+        android:layout_width="280dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="@dimen/margen6"
+        android:backgroundTint="@color/Blue"
+        android:hint="@string/btnCrearCuenta"
+        android:textColorHint="@color/textologin"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/FondotxtConfContraseña" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

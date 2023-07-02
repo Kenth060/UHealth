@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_usuario">
+
+    <fragment
+        android:id="@+id/navigation_recordatorios"
+        android:name="com.example.u_health.View.fragmentos.Recordatorios"
+        android:label="@string/title_recordatorios"
+        tools:layout="@layout/fragment_recordatorios" >
+        <action
+            android:id="@+id/action_navigation_recordatorios_to_fragmentDatosSearch2"
+            app:destination="@id/fragmentDatosSearch2" />
+        <action
+            android:id="@+id/action_navigation_recordatorios_to_vista_medicamento"
+            app:destination="@id/vista_medicamento" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_citas"
+        android:name="com.example.u_health.View.fragmentos.FragmentCitas"
+        android:label="@string/title_citas"
+        tools:layout="@layout/fragment_citas" >
+        <action
+            android:id="@+id/action_navigation_citas_to_fragmentAddCita2"
+            app:destination="@id/fragmentAddCita" />
+        <action
+            android:id="@+id/action_navigation_citas_to_fragment_Recordatorio_Medico"
+            app:destination="@id/fragment_Recordatorio_Medico" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_usuario"
+        android:name="com.example.u_health.View.fragmentos.Usuario"
+        android:label="@string/title_usuario"
+        tools:layout="@layout/fragment_usuario" />
+
+    <fragment
+        android:id="@+id/navigation_informacion"
+        android:name="com.example.u_health.View.fragmentos.Informacion"
+        android:label="@string/title_informacion"
+        tools:layout="@layout/fragment_informacion" >
+        <action
+            android:id="@+id/action_navigation_informacion_to_informacion_Medicamentos"
+            app:destination="@id/informacion_Medicamentos" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_mapa"
+        android:name="com.example.u_health.View.fragmentos.Mapa"
+        android:label="@string/title_mapa"
+        tools:layout="@layout/fragment_mapa" />
+    <fragment
+        android:id="@+id/fragmentDatosSearch2"
+        android:name="com.example.u_health.View.fragmentos.FragmentDatosSearch"
+        android:label="fragment_datos_search"
+        tools:layout="@layout/fragment_datos_search" >
+        <action
+            android:id="@+id/action_fragmentDatosSearch2_to_frequencyData"
+            app:destination="@id/frequencyData" />
+    </fragment>
+    <fragment
+        android:id="@+id/frequencyData"
+        android:name="com.example.u_health.View.fragmentos.FrequencyData"
+        android:label="fragment_frequency_data"
+        tools:layout="@layout/fragment_frequency_data" >
+        <action
+            android:id="@+id/action_frequencyData_to_frequency"
+            app:destination="@id/frequency" />
+    </fragment>
+    <fragment
+        android:id="@+id/frequency"
+        android:name="com.example.u_health.View.fragmentos.Frequency"
+        android:label="fragment_frequency"
+        tools:layout="@layout/fragment_frequency" >
+        <action
+            android:id="@+id/action_frequency_to_navigation_recordatorios"
+            app:destination="@id/navigation_recordatorios" />
+    </fragment>
+    <fragment
+        android:id="@+id/vista_medicamento"
+        android:name="com.example.u_health.View.fragmentos.vista_medicamento"
+        android:label="fragment_vista_medicamento"
+        tools:layout="@layout/fragment_vista_medicamento" />
+    <fragment
+        android:id="@+id/fragmentAddCita"
+        android:name="com.example.u_health.View.fragmentos.fragmentAddCita"
+        android:label="fragment_add_cita"
+        tools:layout="@layout/fragment_add_cita" />
+    <fragment
+        android:id="@+id/fragment_Recordatorio_Medico"
+        android:name="com.example.u_health.View.fragmentos.fragment_Recordatorio_Medico"
+        android:label="fragment_recordatorio_medico"
+        tools:layout="@layout/fragment_recordatorio_medico" />
+    <fragment
+        android:id="@+id/informacion_Medicamentos"
+        android:name="com.example.u_health.Informacion_Medicamentos"
+        android:label="fragment_informacion__medicamentos"
+        tools:layout="@layout/fragment_informacion__medicamentos" >
+        <action
+            android:id="@+id/action_informacion_Medicamentos_to_informacion_Detalle"
+            app:destination="@id/informacion_Detalle" />
+    </fragment>
+    <fragment
+        android:id="@+id/informacion_Detalle"
+        android:name="com.example.u_health.Informacion_Detalle"
+        android:label="fragment_informacion__detalle"
+        tools:layout="@layout/fragment_informacion__detalle" />
+
+
+</navigation>

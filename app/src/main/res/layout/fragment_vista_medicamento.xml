@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="80dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".View.fragmentos.vista_medicamento">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/abRecordatoriosDetalles"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/tbRecordatoriosDetalles"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/Blue"
+            app:titleTextColor="@color/textologin" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvmedicamento"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_row="0"
+        android:layout_rowWeight="1"
+        android:layout_column="0"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="50dp"
+        app:cardCornerRadius="18dp"
+        app:cardElevation="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/abRecordatoriosDetalles">
+
+        <TextView
+            android:id="@+id/txtPastilla_Recordatorio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginTop="12dp"
+            android:text="Ibuprofeno 400 mg Capsulas"
+            android:textAllCaps="false"
+            android:textColor="@color/textologin"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txt_Cantidad_Pills"
+            android:layout_width="160dp"
+            android:layout_height="24dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="53dp"
+            android:background="@drawable/background_dialog"
+            android:text="29 capsula(s) restantes"
+            android:textAlignment="center"
+            android:textColor="@color/textologin"
+            android:textSize="14sp"
+            android:textStyle="bold|italic" />
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="102dp"
+            android:backgroundTint="@color/white"
+            android:text="Dosis"
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            app:strokeColor="@color/white">
+
+        </com.google.android.material.button.MaterialButton>
+
+        <TextView
+            android:id="@+id/txDosis_Recordatorios"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="240dp"
+            android:layout_marginTop="113dp"
+            android:text="1 capsula(s)"
+            android:textColor="@color/black"
+            android:textSize="18dp" />
+    </androidx.cardview.widget.CardView>
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/materialButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="36dp"
+        android:backgroundTint="#E3E3E3"
+        android:text="Hora"
+        android:textAlignment="textStart"
+
+        android:textColor="@color/textologin"
+        android:textSize="18dp"
+        app:layout_constraintTop_toBottomOf="@+id/cvmedicamento"
+        tools:layout_editor_absoluteX="20dp">
+
+    </com.google.android.material.button.MaterialButton>
+
+    <TextView
+        android:id="@+id/txHora_Recordatorios"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/_20_00"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/materialButton"
+        app:layout_constraintTop_toTopOf="@+id/materialButton" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnEliminarRecordatorio"
+        android:layout_width="170dp"
+        android:layout_height="70dp"
+        android:backgroundTint="@color/Blue"
+        android:text="@string/eliminar"
+        android:textColor="@color/textologin"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/materialButton"
+        app:layout_constraintVertical_bias="0.811" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+

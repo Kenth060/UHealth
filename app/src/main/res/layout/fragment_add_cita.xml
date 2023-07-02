@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fgAgregarCita"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/GrisClarito"
+    tools:context=".View.fragmentos.fragmentAddCita">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/abCitas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/Blue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/tb_citas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:layout_editor_absoluteX="3dp"
+            tools:layout_editor_absoluteY="404dp">
+
+            <Button
+                android:id="@+id/btn_cancelar"
+                style="@style/ButtonNoBorder"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/borde_null"
+                android:text="Cancelar"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/txtEspecialidad"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="5dp"
+        android:paddingStart="15dp"
+        android:background="@color/white"
+        android:fontFamily="sans-serif"
+        android:hint="@string/especialidad"
+        android:textColorHint="@color/textologin"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/abCitas" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/txtDoctor"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="5dp"
+        android:paddingStart="15dp"
+        android:background="@color/white"
+        android:hint="@string/doctor"
+        android:textColorHint="@color/textologin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtEspecialidad"
+        tools:ignore="MissingConstraints" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/linearLayoutCompat"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtDoctor">
+
+        <Button
+            android:id="@+id/fecha"
+            style="@style/ButtonNoBorder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/borde_null"
+            android:text="@string/fecha"
+            android:textColor="@color/textologin"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/txtFecha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="230dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/dd_mm_yyyy"
+            android:textColor="@color/textologin"
+            android:textSize="16sp" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/linearLayoutCompat2"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutCompat">
+
+        <Button
+            android:id="@+id/hora"
+            style="@style/ButtonNoBorder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/borde_null"
+            android:text="Hora"
+            android:textColor="@color/textologin"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/txtHora"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="280dp"
+            android:layout_marginTop="15dp"
+            android:text="00:00"
+            android:textColor="@color/textologin"
+            android:textSize="16sp" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.constraintlayout.utils.widget.MotionButton
+        android:id="@+id/btnSave"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="85dp"
+        android:background="@drawable/background_button"
+        android:text="@string/Guardar"
+        android:textColor="@color/textologin"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutCompat2" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/txtDetalles"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="@color/white"
+        android:hint="@string/detalle"
+        android:padding="10dp"
+        android:layout_marginTop="5dp"
+        android:textColorHint="@color/textologin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutCompat2" />
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

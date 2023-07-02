@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="ConfirmationDialog" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:background">@drawable/background_dialog</item>
+        <item name="android:textColorPrimary">@color/dialog_text_primary</item>
+        <item name="android:textColorSecondary">@color/dialog_text_secondary</item>
+    </style>
+
+    <style name="Texto_Negrita" parent="">
+        <item name="android:textSize">14sp</item>
+        <item name="android:color">@color/Blue</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Texto_Normal" parent="">
+        <item name="android:textSize">14sp</item>
+        <item name="android:color">@color/Blue</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="Titulos" parent="">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">#34495E</item>
+        <item name="android:textStyle">bold</item>
+        <item name="fontFamily">@font/courgette</item>
+    </style>
+
+    <style name="ButtonNoBorder" parent="Widget.AppCompat.Button">
+        <item name="android:background">@null</item>
+        <item name="android:padding">0dp</item>
+        <item name="android:minWidth">0dp</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="android:textAppearance">@style/ButtonTextAppearance</item>
+    </style>
+
+    <style name="ButtonTextAppearance" parent="TextAppearance.AppCompat.Button">
+        <item name="android:textColor">?attr/colorControlNormal</item>
+    </style>
+
+    <style name="Timepicker" parent="android:Theme.Material.Light.Dialog">
+        <item name="android:colorAccent">#3e838c</item>
+    </style>
+
+</resources>

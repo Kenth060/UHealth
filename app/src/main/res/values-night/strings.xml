@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title_informacion">Informacion</string>
+    <string name="title_mapa">Mapa</string>
+    <string name="strRecordatorio">Recordatorio</string>
+</resources>

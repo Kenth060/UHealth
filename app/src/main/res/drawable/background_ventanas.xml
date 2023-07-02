@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Diseño de los TextView del constraint principal -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#F5F5F5" />
+            <corners android:radius="14dp" />
+            <!--stroke = diseño del borde-->
+            <stroke
+                android:width="1dp"
+                android:color="#F5F5F5" />
+            <size
+                android:width="148dp"
+                android:height="48dp" />
+        </shape>
+    </item>
+
+</layer-list>

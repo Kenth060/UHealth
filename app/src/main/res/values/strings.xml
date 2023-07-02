@@ -1,0 +1,58 @@
+<resources>
+    <string name="app_name">U Health</string>
+    <string name="correo">Correo</string>
+    <string name="Contraseña">Contraseña</string>
+    <string name="HelperText">Requerido</string>
+    <string name="btnIniciarSesion">Iniciar Sesión</string>
+    <string name="btnRegistrarse">Registrarse</string>
+    <string name="ConfirmarContraseña">Confirmar Contraseña</string>
+    <string name="btnCrearCuenta">Crear Cuenta\n</string>
+    <string name="Google">Iniciar Sesión con Google</string>
+
+
+    <string name="facebook_app_id">230037006451601</string>
+    <string name="fb_login_protocol_scheme">fb230037006451601</string>
+    <string name="facebook_client_token">32bb726dc58fbe052ebc8b9ba9e59ba1</string>
+
+    <string name="preps_file">com.example.u_health.PREFERENCE_FILE_KEY</string>
+    <string name="Lema">Tu Salud en tus manos</string>
+    <string name="ContentDescription">Logo App</string>
+    <string name="nombres">Nombres</string>
+    <string name="apellidos">Apellidos</string>
+    <string name="fecha_nacimiento">Fecha Nacimiento</string>
+    <string name="genero">Genero</string>
+    <string name="altura">Altura</string>
+    <string name="peso">Peso</string>
+    <string name="enfermedad">Enfermedad</string>
+    <string name="guardar">Guardar Perfil</string>
+    <string name="aceptar">Aceptar</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="tipo_enfermedad">Tipo de Enfermedad</string>
+    <string name="title_activity_menu">Menu</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_recordatorios">Recordatorios</string>
+    <string name="title_informacion">Informacion</string>
+    <string name="title_mapa">Mapa</string>
+    <string name="strRecordatorio">Recordatorio</string>
+    <string name="title_usuario">Usuario</string>
+    <string name="nuevamente">nuevamente,</string>
+    <string name="bienvenido">Bienvenido</string>
+    <string name="edad">Edad</string>
+    <string name="peso_ideal">Peso ideal</string>
+    <string name="title_citas">Citas</string>
+    <string name="eliminar">Eliminar</string>
+    <string name="_20_00">20:00</string>
+    <string name="especialidad">Titulo</string>
+    <string name="doctor">Doctor</string>
+    <string name="dd_mm_yyyy">dd/mm/yyyy</string>
+    <string name="fecha">Fecha</string>
+    <string name="Guardar">Guardar</string>
+    <string name="detalle">Detalles</string>
+
+    <string name="Informacion_Detalle">Detalles de la Informacion</string>
+
+</resources>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_recordatorios"
+        android:icon="@drawable/ic_meds"
+        android:title="@string/title_recordatorios" />
+
+    <item
+        android:id="@+id/navigation_citas"
+        android:icon="@drawable/ic_citas"
+        android:title="@string/title_citas" />
+
+    <item
+        android:id="@+id/navigation_usuario"
+        android:icon="@drawable/ic_user"
+        android:title="@string/title_usuario" />
+
+    <item
+        android:id="@+id/navigation_informacion"
+        android:icon="@drawable/ic_info"
+        android:title="@string/title_informacion" />
+
+    <item
+        android:id="@+id/navigation_mapa"
+        android:icon="@drawable/ic_mapa"
+        android:title="@string/title_mapa" />
+
+
+
+</menu>

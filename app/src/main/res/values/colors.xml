@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="DarkCyan">#008B8B</color>
+    <color name="Darkseagreen">#8FBC8B</color>
+    <color name="Springgreen">#00FF7F</color>
+
+
+    <color name="Crema">#ece1c3</color>
+    <color name="LightBlue">#8ebdb6</color>
+    <color name="DarkBlue">#3e838c</color>
+    <color name="Cyan">#195e63</color>
+    <color name="DarkCyann">#063940</color>
+    <color name="texto">#027e82</color>
+    <color name="Azul_Claro">#0277C5</color>
+    <color name="dialog_text_primary">#000000</color>
+    <color name="dialog_text_secondary">#808080</color>
+
+    <color name="VeryLightPurple">#f2e4f9</color>
+    <color name="Gray">#686466</color>
+    <color name="Blue">#839cb5</color>
+    <color name="Celeste">#96d7eb</color>
+    <color name="CelesteClaro">#b1e1e9</color>
+    <color name="GrisClaro">#d8d8c0</color>
+    <color name="GrisClarito">#F8F8F8</color>
+    <color name="fondo">#F0FDFC</color>
+    <color name="Logo">#029196</color>
+    <color name="textologin">#272E36</color>
+
+
+
+</resources>

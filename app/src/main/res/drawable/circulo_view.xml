@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- circle_background.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#EDE5E5" /> <!-- Establece el color deseado, en este caso rojo -->
+    <size android:width="16dp" android:height="16dp" /> <!-- Establece el tamaño deseado del círculo -->
+    <corners android:radius="8dp" /> <!-- Establece la esquina redondeada para que sea un círculo -->
+</shape>

@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "366140578135",
+    "project_id": "proyectofinal-5bf18",
+    "storage_bucket": "proyectofinal-5bf18.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:366140578135:android:ba7202107aa23582850612",
+        "android_client_info": {
+          "package_name": "com.example.u_health"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "366140578135-78tgchipn0f5l30qf4lpvbhidl3mehfl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.u_health",
+            "certificate_hash": "979d692571274dbdde65d96dc22cd84fa121492f"
+          }
+        },
+        {
+          "client_id": "366140578135-av5k67hq22ln42jjm3l85fggnmpd19tu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbhtGtcNiUcMdsD3HdBtgFNLNHgt7Jd1M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "366140578135-av5k67hq22ln42jjm3l85fggnmpd19tu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
