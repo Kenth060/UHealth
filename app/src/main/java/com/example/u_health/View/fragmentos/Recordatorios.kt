@@ -16,6 +16,7 @@ import com.example.u_health.Adapters.RecordatoriosListener
 import com.example.u_health.R
 import com.example.u_health.databinding.FragmentRecordatoriosBinding
 import com.example.u_health.model.Medicamentos
+import com.example.u_health.model.databaseHelper
 
 
 class Recordatorios : Fragment(),RecordatoriosListener
@@ -58,7 +59,7 @@ class Recordatorios : Fragment(),RecordatoriosListener
     {
         val rv = binding.rvRecordatorios
         rv.layoutManager = LinearLayoutManager(requireContext())
-        rv.adapter=AdapterRecordatorios(MedicamentosProvider.Recordatorios_Meds,this)
+        rv.adapter=AdapterRecordatorios(databaseHelper(requireContext()).getRecordatorios_Medicamentos(),this)
     }
 
     override fun onRecordatorioClicked(M: Medicamentos)
@@ -66,8 +67,9 @@ class Recordatorios : Fragment(),RecordatoriosListener
         view?.let { Navigation.findNavController(it).navigate(R.id.vista_medicamento) }
         val Preferencias: SharedPreferences? = context?.getSharedPreferences("Datos_Recordatorio", Context.MODE_PRIVATE)
         val editor = Preferencias?.edit()
+        editor?.putString("Id", M.Id.toString())
         editor?.putString("Pastilla", M.Pastilla)
-        editor?.putString("Cantidad", M.Cantidad)
+        editor?.putString("Cantidad", M.Cantidad.toString())
         editor?.putString("Dosis", M.Dosis)
         editor?.putString("Hora", M.Hora)
         editor?.apply()

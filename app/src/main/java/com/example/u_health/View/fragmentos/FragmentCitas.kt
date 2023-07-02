@@ -15,6 +15,7 @@ import com.example.u_health.Adapters.MedicamentosProvider
 import com.example.u_health.R
 import com.example.u_health.databinding.FragmentCitasBinding
 import com.example.u_health.model.Citas
+import com.example.u_health.model.databaseHelper
 
 
 class FragmentCitas : Fragment(),CitasListener
@@ -52,7 +53,7 @@ class FragmentCitas : Fragment(),CitasListener
     {
         val rv = binding.rvCitas
         rv.layoutManager = LinearLayoutManager(requireContext())
-        rv.adapter= AdapterCitas(MedicamentosProvider.Recordatorios_Citas,this)
+        rv.adapter= AdapterCitas(databaseHelper(requireContext()).getRecordatorios_Citas(),this)
     }
 
     override fun onCitaClicked(C: Citas)
@@ -60,6 +61,7 @@ class FragmentCitas : Fragment(),CitasListener
         view?.let { Navigation.findNavController(it).navigate(R.id.fragment_Recordatorio_Medico) }
         val Preferencias: SharedPreferences? = context?.getSharedPreferences("Datos_Citas", Context.MODE_PRIVATE)
         val editor = Preferencias?.edit()
+        editor?.putString("Id", C.Id.toString())
         editor?.putString("Titulo", C.Titulo)
         editor?.putString("Medico",C.Medico)
         editor?.putString("Fecha", C.Fecha)

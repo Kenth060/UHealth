@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-
-<<<<<<< HEAD
-=======
     <uses-permission android:name="android.permission.VIBRATE"/>
     <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM"/>
     <uses-permission android:name="android.permission.WAKE_LOCK"/>
@@ -15,7 +13,6 @@
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
 
->>>>>>> b19750e (Initial commit)
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -26,12 +23,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.UHealth"
         tools:targetApi="33">
-        <activity
-            android:name=".View.fragmentos.Informacion_Detalle"
-            android:exported="false" />
-        <activity
-            android:name=".View.fragmentos.informacion_medicamentos"
-            android:exported="false" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
@@ -76,8 +67,6 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
-<<<<<<< HEAD
-=======
         <receiver
             android:name=".View.fragmentos.Notification"
             android:enabled="true"
@@ -86,7 +75,6 @@
             android:name=".View.fragmentos.Notificacion_recordatorio"
             android:enabled="true"
             android:exported="true" />
->>>>>>> b19750e (Initial commit)
     </application>
 
 </manifest>

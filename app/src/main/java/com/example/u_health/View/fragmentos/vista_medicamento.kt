@@ -13,6 +13,7 @@ import com.example.u_health.Adapters.MedicamentosProvider
 import com.example.u_health.R
 import com.example.u_health.databinding.FragmentVistaMedicamentoBinding
 import com.example.u_health.model.Medicamentos
+import com.example.u_health.model.databaseHelper
 
 
 class vista_medicamento : Fragment()
@@ -43,6 +44,7 @@ class vista_medicamento : Fragment()
         }
 
         val Prefencias = context?.getSharedPreferences("Datos_Recordatorio", Context.MODE_PRIVATE)
+        val Id = Prefencias?.getString("Id", "")
         val Pastilla = Prefencias?.getString("Pastilla", "")
         val Cantidad = Prefencias?.getString("Cantidad", "")
         val Dosis = Prefencias?.getString("Dosis", "")
@@ -58,7 +60,16 @@ class vista_medicamento : Fragment()
         binding.txHoraRecordatorios.text=Hora
 
         binding.btnEliminarRecordatorio.setOnClickListener {
-            MedicamentosProvider.Recordatorios_Meds.remove(Medicamentos(Pastilla.toString(),Dosis.toString(),Hora.toString(), Cantidad.toString()))
+            if (Id != null && Cantidad != null && Pastilla != null && Dosis != null && Hora != null)
+            {
+                var med=Medicamentos()
+                med.Id=Id.toLong()
+                med.Pastilla=Pastilla
+                med.Dosis=Dosis
+                med.Hora=Hora
+                med.Cantidad=Cantidad.toInt()
+                databaseHelper(requireContext()).deleteRecordatorios_Medicamentos(med)
+            }
             Navigation.findNavController(view).navigate(R.id.navigation_recordatorios)
         }
 

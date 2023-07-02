@@ -29,6 +29,7 @@ import com.example.u_health.databinding.FragmentFrequencyBinding
 import com.example.u_health.databinding.VistaFrecuenciaBinding
 import com.example.u_health.databinding.VistaFrecuenciaDosisBinding
 import com.example.u_health.model.Medicamentos
+import com.example.u_health.model.databaseHelper
 import java.util.Calendar
 import java.util.Date
 
@@ -80,9 +81,25 @@ class Frequency : Fragment() {
                 val frecuenciaDatosSeleccionado = sharedPreferences?.getString("frecuenciaDato", "")
                 val hora =  binding.txtHora.text.toString()
                 val dosis = binding.txtDosis.text.toString()
+                val MisPreferencias = context?.getSharedPreferences("Id's", Context.MODE_PRIVATE)
+                val edit = MisPreferencias?.edit()
+                edit?.putInt("Id_Recordatorios",1)
+                edit?.apply()
+                var Id=MisPreferencias?.getInt("Id_Recordatorios",0)
 
-                if (medicamentoSeleccionado != null && frecuenciaDatosSeleccionado != null)
-                { MedicamentosProvider.Recordatorios_Meds.add( Medicamentos(medicamentoSeleccionado,frecuenciaDatosSeleccionado,hora,dosis)) }
+                if (medicamentoSeleccionado != null && frecuenciaDatosSeleccionado != null && Id != null)
+                {
+                    var med=Medicamentos()
+                    med.Id=Id.toLong()
+                    med.Pastilla=medicamentoSeleccionado
+                    med.Dosis=frecuenciaDatosSeleccionado
+                    med.Hora=hora
+                    med.Cantidad=dosis.toInt()
+                    databaseHelper(requireContext()).insertarRecordatorios_Medicamentos(med)
+                    Id++
+                    edit?.putInt("Id_Recordatorios",Id)
+                    edit?.apply()
+                }
 
                 Toast.makeText(requireContext(), "Guardado", Toast.LENGTH_SHORT).show()
 

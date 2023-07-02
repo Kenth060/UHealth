@@ -20,6 +20,7 @@ import com.example.u_health.Adapters.MedicamentosProvider
 import com.example.u_health.R
 import com.example.u_health.databinding.FragmentAddCitaBinding
 import com.example.u_health.model.Citas
+import com.example.u_health.model.databaseHelper
 import java.util.Calendar
 import java.util.Date
 
@@ -57,16 +58,40 @@ class fragmentAddCita : Fragment()
 
         createNotificacionChannnel()
         binding.btnSave.setOnClickListener {
-            var Titulo = binding.txtEspecialidad.text.toString()
-            var Doctor = binding.txtDoctor.text.toString()
-            var Fecha_Cita=binding.txtFecha.text.toString()
-            var Hora = binding.txtHora.text.toString()
-            var Detalles = binding.txtDetalles.text.toString()
+            val Titulo = binding.txtEspecialidad.text.toString()
+            val Doctor = binding.txtDoctor.text.toString()
+            val Fecha_Cita=binding.txtFecha.text.toString()
+            val Hora = binding.txtHora.text.toString()
+            val Detalles = binding.txtDetalles.text.toString()
+
             scheduleNotification()
 
-            MedicamentosProvider.Recordatorios_Citas.add(Citas(Titulo,Doctor,Fecha_Cita,Hora,Detalles))
-            Navigation.findNavController(view).navigate(R.id.navigation_citas)
+            val MisPreferencias = context?.getSharedPreferences("Id's", Context.MODE_PRIVATE)
+            val edit = MisPreferencias?.edit()
+            edit?.putInt("Id_Citas",1)
+            edit?.apply()
+            var Id=MisPreferencias?.getInt("Id_Citas",0)
+
+            if (Id != null)
+            {
+                val cita = Citas()
+                cita.Id = Id.toLong()
+                cita.Titulo = Titulo
+                cita.Medico = Doctor
+                cita.Fecha = Fecha_Cita
+                cita.Hora = Hora
+                cita.Detalles = Detalles
+                databaseHelper(requireContext()).insertarRecordatorios_Citas(cita)
+                Navigation.findNavController(view).navigate(R.id.navigation_citas)
+                Id++
+                edit?.putInt("Id_Citas",Id)
+                edit?.apply()
+            }
         }
+
+
+
+
 
         return view
     }
