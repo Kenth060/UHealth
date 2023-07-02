@@ -13,6 +13,7 @@
         android:background="@drawable/borde"
         app:cardCornerRadius="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:cardBackgroundColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"

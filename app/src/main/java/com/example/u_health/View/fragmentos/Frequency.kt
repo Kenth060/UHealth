@@ -1,7 +1,14 @@
 package com.example.u_health.View.fragmentos
 
 import android.annotation.SuppressLint
+import android.app.AlarmManager
+import android.app.AlertDialog
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.app.PendingIntent
 import android.content.Context
+import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.view.Gravity
 import androidx.fragment.app.Fragment
@@ -12,6 +19,7 @@ import android.view.ViewGroup
 import android.widget.PopupWindow
 import android.widget.TextView
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.navigation.Navigation
 import com.example.u_health.Adapters.AdapterRecordatorios
@@ -21,6 +29,8 @@ import com.example.u_health.databinding.FragmentFrequencyBinding
 import com.example.u_health.databinding.VistaFrecuenciaBinding
 import com.example.u_health.databinding.VistaFrecuenciaDosisBinding
 import com.example.u_health.model.Medicamentos
+import java.util.Calendar
+import java.util.Date
 
 
 class Frequency : Fragment() {
@@ -41,6 +51,7 @@ class Frequency : Fragment() {
         super.onCreate(savedInstanceState)
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -58,11 +69,12 @@ class Frequency : Fragment() {
             popupWindow.dismiss()
         }
 
+        createNotificacionChannnel()
         binding.btnSiguiente.setOnClickListener {
             if(!binding.txtHora.text.equals("Hora")&&
                 !binding.txtDosis.text.equals("Dosis"))
             {
-
+                scheduleNotification()
                 val sharedPreferences = context?.getSharedPreferences("mi_pref", Context.MODE_PRIVATE)
                 val medicamentoSeleccionado = sharedPreferences?.getString("selectedItem", "")
                 val frecuenciaDatosSeleccionado = sharedPreferences?.getString("frecuenciaDato", "")
@@ -157,18 +169,80 @@ class Frequency : Fragment() {
         }
         return true
     }
-    private fun showTimePicker(){
-        val timepicker = TimePickerFragment{currentDate(it)}
-        val fragmentManager = requireActivity().supportFragmentManager
-        timepicker.show(fragmentManager, "timepicker")
+    private fun showTimePicker() {
+        val timePicker = TimePickerFragment { hour, minute ->
+            onTimeSelected(hour, minute as Int)
+        }
+        timePicker.show(requireFragmentManager(), "timePicker")
     }
 
-    private fun currentDate(time : String) {
-        binding.txtHora.text = "$time"
-
+    private fun onTimeSelected(hour: Int, minute: Int) {
+        binding.txtHora.text = "$hour : $minute"
+        val sharedPreferences = context?.getSharedPreferences("mi_pref", Context.MODE_PRIVATE)
+        val editor = sharedPreferences?.edit()
+        editor?.putString("hora", hour.toString())
+        editor?.putString("minuto", minute.toString())
+        editor?.apply()
     }
+    private fun mensajeAlerta(time: Long, title: String, message: String) {
+        val date = Date(time)
+        val dateFormat = android.text.format.DateFormat.getLongDateFormat(requireContext())
+        val timeFormat = android.text.format.DateFormat.getTimeFormat(requireContext())
 
-    fun Add_Recordatorio()
-    {}
+        AlertDialog.Builder(requireContext())
+            .setTitle("Notificacion")
+            .setMessage(
+                "title" + title+
+                        "\nMessage: "+message+
+                        "\nAt: "+dateFormat.format(date) + " "+timeFormat.format(date))
+            .setPositiveButton("okay"){_,_ ->}
+            .setNegativeButton("Cancelar"){_,_ ->}
+            .show()
+    }
+    @RequiresApi(Build.VERSION_CODES.O)
+    private fun createNotificacionChannnel() {
+        val name = "Notif channel"
+        val desc = "A Description of the Channel"
+        val importance = NotificationManager.IMPORTANCE_DEFAULT
+        val channel = NotificationChannel(channelRecordatorioID, name, importance)
+        channel.description = desc
+
+        val notificationManager = requireContext().getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+        notificationManager.createNotificationChannel(channel)
+    }
+    private fun scheduleNotification() {
+        val intent = Intent(requireContext(), Notificacion_recordatorio::class.java)
+        val title = "Recordatorio"
+        val message = "detalles"
+        intent.putExtra(titleExtraRecordatorio,title)
+        intent.putExtra(messageExtraRecordatorio,message)
+
+        val pendingIntent = PendingIntent.getBroadcast(
+            requireContext(),
+            notificationRecordatorioID,
+            intent,
+            PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT
+        )
+        val alarmManager = requireContext().getSystemService(Context.ALARM_SERVICE) as AlarmManager
+        val time = getTime()
+        alarmManager.setExactAndAllowWhileIdle(
+            AlarmManager.RTC_WAKEUP,
+            time,
+            pendingIntent
+        )
+        mensajeAlerta(time,title,message)
+    }
+    private fun getTime(): Long {
+        val sharedPreferences = context?.getSharedPreferences("mi_pref", Context.MODE_PRIVATE)
+        val horas = sharedPreferences?.getString("hora","")
+        val minutos = sharedPreferences?.getString("minuto","")
+        val calendar = Calendar.getInstance()
+        val yeaar = calendar.get(Calendar.YEAR)
+        val mees = calendar.get(Calendar.MONTH)
+        val diaa = calendar.get(Calendar.DAY_OF_MONTH)
+
+        calendar.set(yeaar!!.toInt(), mees!!.toInt(),diaa!!.toInt(),horas!!.toInt(),minutos!!.toInt())
+        return calendar.timeInMillis
+    }
 
 }

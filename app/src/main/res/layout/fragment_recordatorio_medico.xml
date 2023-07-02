@@ -28,6 +28,10 @@
         android:layout_width="370dp"
         android:layout_height="330dp"
         android:background="@drawable/borde"
+<<<<<<< HEAD
+=======
+        app:cardBackgroundColor="@color/white"
+>>>>>>> b19750e (Initial commit)
         app:cardCornerRadius="15dp"
         android:layout_marginTop="25dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -120,6 +124,10 @@
         android:layout_height="160dp"
         android:layout_marginTop="25dp"
         android:background="@drawable/borde"
+<<<<<<< HEAD
+=======
+        app:cardBackgroundColor="@color/white"
+>>>>>>> b19750e (Initial commit)
         app:cardCornerRadius="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
