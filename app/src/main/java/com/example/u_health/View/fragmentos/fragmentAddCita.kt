@@ -13,6 +13,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
@@ -41,10 +42,16 @@ class fragmentAddCita : Fragment()
     ): View? {
         _binding = FragmentAddCitaBinding.inflate(inflater, container, false)
         val view = binding.root
+
         val sharedPreferences = context?.getSharedPreferences("datos_fecha", Context.MODE_PRIVATE)
         val editor = sharedPreferences?.edit()
         editor?.clear()
         editor?.apply()
+
+        val MisPreferencias = context?.getSharedPreferences("Id's", Context.MODE_PRIVATE)
+        val Edit = MisPreferencias?.edit()
+        var Id_cita=MisPreferencias?.getInt("Id_Citas",0)
+        Id_cita = Id_cita!! + 1
 
         binding.btnCancelar.setOnClickListener {
             Navigation.findNavController(view).navigate(R.id.navigation_citas)
@@ -66,16 +73,8 @@ class fragmentAddCita : Fragment()
 
             scheduleNotification()
 
-            val MisPreferencias = context?.getSharedPreferences("Id's", Context.MODE_PRIVATE)
-            val edit = MisPreferencias?.edit()
-            edit?.putInt("Id_Citas",1)
-            edit?.apply()
-            var Id=MisPreferencias?.getInt("Id_Citas",0)
-
-            if (Id != null)
-            {
                 val cita = Citas()
-                cita.Id = Id.toLong()
+                cita.Id = Id_cita?.toLong()!!
                 cita.Titulo = Titulo
                 cita.Medico = Doctor
                 cita.Fecha = Fecha_Cita
@@ -83,10 +82,9 @@ class fragmentAddCita : Fragment()
                 cita.Detalles = Detalles
                 databaseHelper(requireContext()).insertarRecordatorios_Citas(cita)
                 Navigation.findNavController(view).navigate(R.id.navigation_citas)
-                Id++
-                edit?.putInt("Id_Citas",Id)
-                edit?.apply()
-            }
+            Edit?.putInt("Id_Citas",Id_cita)
+            Edit?.apply()
+
         }
 
 

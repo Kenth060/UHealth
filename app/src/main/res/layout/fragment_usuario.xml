@@ -84,6 +84,7 @@
         app:layout_constraintVertical_bias="0.0">
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/cvAltura"
             android:layout_width="@dimen/widthcardviewuser"
             android:layout_height="wrap_content"
             android:layout_row="0"
@@ -91,6 +92,7 @@
             android:layout_column="0"
             android:layout_columnWeight="1"
             android:layout_margin="8dp"
+            app:cardBackgroundColor="#FBFEFF"
             app:cardCornerRadius="8dp"
             app:cardElevation="8dp">
 
@@ -104,6 +106,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/altura"
+                    android:textColor="@color/textologin"
                     android:textSize="16sp"
                     android:textStyle="bold" />
 
@@ -128,6 +131,7 @@
                     android:layout_height="wrap_content"
                     android:paddingTop="5dp"
                     android:text="1.75 M"
+                    android:textColor="@color/textologin"
                     android:textSize="16sp"
                     android:textStyle="bold" />
 
@@ -136,6 +140,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/cvPeso"
             android:layout_width="@dimen/widthcardviewuser"
             android:layout_height="wrap_content"
             android:layout_row="0"
@@ -143,6 +148,7 @@
             android:layout_column="1"
             android:layout_columnWeight="1"
             android:layout_margin="8dp"
+            app:cardBackgroundColor="#FBFEFF"
             app:cardCornerRadius="8dp"
             app:cardElevation="8dp">
 
@@ -156,6 +162,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/peso"
+                    android:textColor="@color/textologin"
                     android:textSize="16sp"
                     android:textStyle="bold" />
 
@@ -180,6 +187,7 @@
                     android:layout_height="wrap_content"
                     android:paddingTop="5dp"
                     android:text="75 Kg"
+                    android:textColor="@color/textologin"
                     android:textSize="16sp"
                     android:textStyle="bold" />
 
@@ -188,6 +196,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/cvEdad"
             android:layout_width="@dimen/widthcardviewuser"
             android:layout_height="wrap_content"
             android:layout_row="1"
@@ -195,6 +204,7 @@
             android:layout_column="0"
             android:layout_columnWeight="1"
             android:layout_margin="8dp"
+            app:cardBackgroundColor="#FBFEFF"
             app:cardCornerRadius="8dp"
             app:cardElevation="8dp">
 
@@ -208,6 +218,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/edad"
+                    android:textColor="@color/textologin"
                     android:textSize="16sp"
                     android:textStyle="bold" />
 
@@ -231,6 +242,7 @@
                     android:layout_height="wrap_content"
                     android:paddingTop="5dp"
                     android:text="20 años"
+                    android:textColor="@color/textologin"
                     android:textSize="16sp"
                     android:textStyle="bold" />
 
@@ -239,6 +251,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/cvPesoIdeal"
             android:layout_width="@dimen/widthcardviewuser"
             android:layout_height="wrap_content"
             android:layout_row="1"
@@ -246,6 +259,7 @@
             android:layout_column="1"
             android:layout_columnWeight="1"
             android:layout_margin="8dp"
+            app:cardBackgroundColor="#FBFEFF"
             app:cardCornerRadius="8dp"
             app:cardElevation="8dp">
 
@@ -259,6 +273,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/peso_ideal"
+                    android:textColor="@color/textologin"
                     android:textSize="16sp"
                     android:textStyle="bold" />
 
@@ -283,6 +298,7 @@
                     android:layout_height="wrap_content"
                     android:paddingTop="5dp"
                     android:text="100 Kg"
+                    android:textColor="@color/textologin"
                     android:textSize="16sp"
                     android:textStyle="bold" />
 
@@ -291,14 +307,16 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/cvCalorias"
             android:layout_width="@dimen/widthcardviewuser"
             android:layout_height="wrap_content"
             android:layout_row="2"
             android:layout_rowWeight="1"
             android:layout_column="0"
-            android:layout_columnWeight="1"
 
+            android:layout_columnWeight="1"
             android:layout_margin="8dp"
+            app:cardBackgroundColor="#F3FBFF"
             app:cardCornerRadius="8dp"
             app:cardElevation="8dp">
 
@@ -312,6 +330,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Calorias"
+                    android:textColor="@color/textologin"
                     android:textSize="16sp"
                     android:textStyle="bold" />
 
@@ -336,6 +355,7 @@
                     android:layout_height="wrap_content"
                     android:paddingTop="5dp"
                     android:text="20"
+                    android:textColor="@color/textologin"
                     android:textSize="16sp"
                     android:textStyle="bold" />
 
@@ -344,6 +364,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/cvIMC"
             android:layout_width="@dimen/widthcardviewuser"
             android:layout_height="wrap_content"
             android:layout_row="2"
@@ -352,6 +373,7 @@
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
             android:layout_margin="8dp"
+            app:cardBackgroundColor="#FBFEFF"
             app:cardCornerRadius="8dp"
             app:cardElevation="8dp">
 
@@ -365,6 +387,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="IMC"
+                    android:textColor="@color/textologin"
                     android:textSize="16sp"
                     android:textStyle="bold" />
 
@@ -389,6 +412,7 @@
                     android:layout_height="wrap_content"
                     android:paddingTop="5dp"
                     android:text="20"
+                    android:textColor="@color/textologin"
                     android:textSize="16sp"
                     android:textStyle="bold" />
 
