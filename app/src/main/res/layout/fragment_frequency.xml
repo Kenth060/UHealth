@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragmentFrecuencia"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/fragmentFrecuencia"
+    android:background="@color/GrisClarito"
     tools:context=".View.fragmentos.Frequency">
 
     <com.airbnb.lottie.LottieAnimationView
@@ -22,48 +23,52 @@
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:textSize="14sp"
-        android:layout_marginTop="224dp"/>
+        android:layout_marginTop="224dp"
+        android:textSize="14sp" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="263dp"
         android:layout_height="45dp"
-        android:layout_marginTop="274dp"
         android:layout_marginLeft="30dp"
+        android:layout_marginTop="274dp"
         android:text="¿Con que frecuencia toma este medicamento?"
         android:textColor="@color/black"
         android:textSize="18sp"
         android:textStyle="bold" />
+
     <TextView
         android:id="@+id/txtHora"
         android:layout_width="259dp"
         android:layout_height="52dp"
+        android:layout_marginLeft="70dp"
         android:layout_marginTop="342dp"
         android:drawableEnd="@drawable/arrow2"
         android:gravity=""
         android:paddingLeft="20dp"
         android:text="Hora"
-        android:layout_marginLeft="70dp"/>
+        android:textColor="#34495E" />
+
     <TextView
         android:id="@+id/txt_dosis"
         android:layout_width="263dp"
         android:layout_height="43dp"
-        android:layout_marginTop="420dp"
         android:layout_marginLeft="70dp"
+        android:layout_marginTop="420dp"
         android:drawableEnd="@drawable/arrow2"
         android:gravity=""
         android:paddingLeft="20dp"
-        android:text="Dosis" />
+        android:text="Dosis"
+        android:textColor="#34495E" />
 
     <androidx.constraintlayout.utils.widget.MotionButton
         android:id="@+id/btn_siguiente"
         android:layout_width="397dp"
         android:layout_height="53dp"
+        android:layout_marginTop="620dp"
         android:background="@drawable/background_button"
         android:text="Guardar"
-        android:textColor="@color/white"
-        android:layout_marginTop="620dp"/>
+        android:textColor="@color/white" />
 
 
 </FrameLayout>

@@ -33,7 +33,6 @@ import com.example.u_health.model.databaseHelper
 import java.util.Calendar
 import java.util.Date
 
-
 class Frequency : Fragment() {
 
     private lateinit var cantidad : String
@@ -47,11 +46,9 @@ class Frequency : Fragment() {
     private var _bindingVFD: VistaFrecuenciaDosisBinding? = null
     private val bindingVFD get() = _bindingVFD!!
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
-
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -61,7 +58,6 @@ class Frequency : Fragment() {
         _bindingVF = VistaFrecuenciaBinding.inflate(inflater, container, false)
         _bindingVFD = VistaFrecuenciaDosisBinding.inflate(inflater, container, false)
         val view = binding.root
-
 
         valida()
         bindingVFD.btnAceptar.setOnClickListener {
@@ -103,7 +99,6 @@ class Frequency : Fragment() {
 
                 Toast.makeText(requireContext(), "Guardado", Toast.LENGTH_SHORT).show()
 
-
                 //luego de guardar los datos lo limpiamos el shared por si agrega
                 //otro recordatorio y no queden guardados los mismos datos
                 val editor = sharedPreferences?.edit()
@@ -116,7 +111,6 @@ class Frequency : Fragment() {
                 Toast.makeText(requireContext(), "Rellene los datos", Toast.LENGTH_SHORT).show()
             }
         }
-
         return view
     }
     private fun valida() {
@@ -209,10 +203,10 @@ class Frequency : Fragment() {
         AlertDialog.Builder(requireContext())
             .setTitle("Notificacion")
             .setMessage(
-                "title" + title+
-                        "\nMessage: "+message+
-                        "\nAt: "+dateFormat.format(date) + " "+timeFormat.format(date))
-            .setPositiveButton("okay"){_,_ ->}
+                "Titulo: " + title+
+                        "\nMensaje: "+message+
+                        "\nHora: "+dateFormat.format(date) + " "+timeFormat.format(date))
+            .setPositiveButton("Confirmar"){_,_ ->}
             .setNegativeButton("Cancelar"){_,_ ->}
             .show()
     }
@@ -229,9 +223,10 @@ class Frequency : Fragment() {
     }
     private fun scheduleNotification() {
         val intent = Intent(requireContext(), Notificacion_recordatorio::class.java)
-        val title = "Recordatorio"
+        val sharedPreferences = context?.getSharedPreferences("mi_pref", Context.MODE_PRIVATE)
+        val medicamentoSeleccionado = sharedPreferences?.getString("selectedItem", "")
         val message = "detalles"
-        intent.putExtra(titleExtraRecordatorio,title)
+        intent.putExtra(titleExtraRecordatorio,medicamentoSeleccionado.toString())
         intent.putExtra(messageExtraRecordatorio,message)
 
         val pendingIntent = PendingIntent.getBroadcast(
@@ -247,7 +242,7 @@ class Frequency : Fragment() {
             time,
             pendingIntent
         )
-        mensajeAlerta(time,title,message)
+        mensajeAlerta(time,medicamentoSeleccionado.toString(),message)
     }
     private fun getTime(): Long {
         val sharedPreferences = context?.getSharedPreferences("mi_pref", Context.MODE_PRIVATE)

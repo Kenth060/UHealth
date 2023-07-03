@@ -56,15 +56,11 @@ class FrequencyData : Fragment() {
             }
         }
 
-        binding.radioButton3.setOnCheckedChangeListener { _, isChecked ->
-            if (isChecked) {
-                valorCheck = binding.radioButton3.text.toString()
-            }
-        }
+
 
 
         binding.btnGuardar.setOnClickListener {
-            if(binding.radioButton1.isChecked || binding.radioButton2.isChecked || binding.radioButton3.isChecked)
+            if(binding.radioButton1.isChecked || binding.radioButton2.isChecked )
             {
                 val sharedPreferences = context?.getSharedPreferences("mi_pref", Context.MODE_PRIVATE)
                 val editor = sharedPreferences?.edit()

@@ -29,12 +29,10 @@ class fragmentAddCita : Fragment()
 {
     private var _binding: FragmentAddCitaBinding? = null
     private val binding get() = _binding!!
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
     }
-
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -65,13 +63,15 @@ class fragmentAddCita : Fragment()
 
         createNotificacionChannnel()
         binding.btnSave.setOnClickListener {
-            val Titulo = binding.txtEspecialidad.text.toString()
-            val Doctor = binding.txtDoctor.text.toString()
-            val Fecha_Cita=binding.txtFecha.text.toString()
-            val Hora = binding.txtHora.text.toString()
-            val Detalles = binding.txtDetalles.text.toString()
+            if(binding.txtEspecialidad.text.toString()!=""&&binding.txtDoctor.text.toString()!=""&&binding.txtFecha.text.toString()!=""&&
+                binding.txtHora.text.toString()!=""){
+                val Titulo = binding.txtEspecialidad.text.toString()
+                val Doctor = binding.txtDoctor.text.toString()
+                val Fecha_Cita=binding.txtFecha.text.toString()
+                val Hora = binding.txtHora.text.toString()
+                val Detalles = binding.txtDetalles.text.toString()
 
-            scheduleNotification()
+                scheduleNotification()
 
                 val cita = Citas()
                 cita.Id = Id_cita?.toLong()!!
@@ -82,21 +82,18 @@ class fragmentAddCita : Fragment()
                 cita.Detalles = Detalles
                 databaseHelper(requireContext()).insertarRecordatorios_Citas(cita)
                 Navigation.findNavController(view).navigate(R.id.navigation_citas)
-            Edit?.putInt("Id_Citas",Id_cita)
-            Edit?.apply()
-
+                Edit?.putInt("Id_Citas",Id_cita)
+                Edit?.apply()
+            }else
+                Toast.makeText(requireContext(), "Rellene los datos", Toast.LENGTH_SHORT).show()
         }
-
-
-
-
 
         return view
     }
     private fun scheduleNotification() {
         val intent = Intent(requireContext(), Notification::class.java)
-        val title = "cita"
-        val message = "detalles"
+        val title = binding.txtEspecialidad.text.toString()
+        val message = binding.txtDetalles.text.toString()
         intent.putExtra(titleExtra,title)
         intent.putExtra(messageExtra,message)
 
@@ -154,10 +151,10 @@ class fragmentAddCita : Fragment()
         AlertDialog.Builder(requireContext())
             .setTitle("Notificacion")
             .setMessage(
-                "title" + title+
-                        "\nMessage: "+message+
-                        "\nAt: "+dateFormat.format(date) + " "+timeFormat.format(date))
-            .setPositiveButton("okay"){_,_ ->}
+                "Titulo: " + title+
+                        "\nMensaje: "+message+
+                        "\nHora: "+dateFormat.format(date) + " "+timeFormat.format(date))
+            .setPositiveButton("Confirmar"){_,_ ->}
             .setNegativeButton("Cancelar"){_,_ ->}
             .show()
     }
