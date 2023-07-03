@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
-    android:id="@+id/fgInformacion"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fgInformacion"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#efefef"
     tools:context=".View.fragmentos.Informacion">
 
     <GridLayout
@@ -26,6 +26,7 @@
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
             android:layout_margin="8dp"
+            app:cardBackgroundColor="#FBFEFF"
             app:cardCornerRadius="8dp"
             app:cardElevation="8dp">
 
@@ -52,6 +53,7 @@
                     android:layout_height="wrap_content"
                     android:text="Analgesico"
                     android:textAlignment="center"
+                    android:textColor="#34495E"
                     android:textStyle="bold" />
 
             </LinearLayout>
@@ -68,6 +70,7 @@
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
             android:layout_margin="8dp"
+            app:cardBackgroundColor="#FBFEFF"
             app:cardCornerRadius="8dp"
             app:cardElevation="8dp">
 
@@ -77,6 +80,7 @@
                 android:layout_gravity="center_vertical|center_horizontal"
                 android:gravity="center"
                 android:orientation="vertical">
+
                 <com.airbnb.lottie.LottieAnimationView
                     android:id="@+id/lf2"
                     android:layout_width="70dp"
@@ -90,14 +94,14 @@
 
                 <ImageView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    />
+                    android:layout_height="wrap_content" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Antiflamatorio"
                     android:textAlignment="center"
+                    android:textColor="#34495E"
                     android:textStyle="bold" />
 
             </LinearLayout>
@@ -114,6 +118,7 @@
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
             android:layout_margin="8dp"
+            app:cardBackgroundColor="#FBFEFF"
             app:cardCornerRadius="8dp"
             app:cardElevation="8dp">
 
@@ -123,6 +128,7 @@
                 android:layout_gravity="center_vertical|center_horizontal"
                 android:gravity="center"
                 android:orientation="vertical">
+
                 <com.airbnb.lottie.LottieAnimationView
                     android:id="@+id/lf3"
                     android:layout_width="70dp"
@@ -136,14 +142,14 @@
 
                 <ImageView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                     />
+                    android:layout_height="wrap_content" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Antibioticos"
                     android:textAlignment="center"
+                    android:textColor="#34495E"
                     android:textStyle="bold" />
 
             </LinearLayout>
@@ -160,6 +166,7 @@
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
             android:layout_margin="8dp"
+            app:cardBackgroundColor="#FBFEFF"
             app:cardCornerRadius="8dp"
             app:cardElevation="8dp">
 
@@ -170,6 +177,7 @@
                 android:layout_gravity="center_vertical|center_horizontal"
                 android:gravity="center"
                 android:orientation="vertical">
+
                 <com.airbnb.lottie.LottieAnimationView
                     android:id="@+id/lf4"
                     android:layout_width="70dp"
@@ -190,6 +198,7 @@
                     android:layout_height="wrap_content"
                     android:text="Antidepresivos"
                     android:textAlignment="center"
+                    android:textColor="#34495E"
                     android:textStyle="bold" />
 
             </LinearLayout>
@@ -206,6 +215,7 @@
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
             android:layout_margin="8dp"
+            app:cardBackgroundColor="#FBFEFF"
             app:cardCornerRadius="8dp"
             app:cardElevation="8dp">
 
@@ -215,6 +225,7 @@
                 android:layout_gravity="center_vertical|center_horizontal"
                 android:gravity="center"
                 android:orientation="vertical">
+
                 <com.airbnb.lottie.LottieAnimationView
                     android:id="@+id/lf5"
                     android:layout_width="70dp"
@@ -235,6 +246,7 @@
                     android:layout_height="wrap_content"
                     android:text="Medicina para Diabetes"
                     android:textAlignment="center"
+                    android:textColor="#34495E"
                     android:textStyle="bold" />
 
             </LinearLayout>
@@ -251,6 +263,7 @@
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
             android:layout_margin="8dp"
+            app:cardBackgroundColor="#FBFEFF"
             app:cardCornerRadius="8dp"
             app:cardElevation="8dp">
 
@@ -260,6 +273,7 @@
                 android:layout_gravity="center_vertical|center_horizontal"
                 android:gravity="center"
                 android:orientation="vertical">
+
                 <com.airbnb.lottie.LottieAnimationView
                     android:id="@+id/lf6"
                     android:layout_width="70dp"
@@ -280,6 +294,7 @@
                     android:layout_height="wrap_content"
                     android:text="Medicina tos y resfrio"
                     android:textAlignment="center"
+                    android:textColor="#34495E"
                     android:textStyle="bold" />
 
             </LinearLayout>

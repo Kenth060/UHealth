@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/GrisClarito"
     tools:context=".Informacion_Detalle">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -48,6 +48,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:text="Informacion:"
+        android:textColor="#34495E"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -59,8 +60,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="15dp"
-        android:layout_marginEnd="10dp"
         android:textAlignment="center"
+        android:textColor="@color/textologin"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtInfoPills" />
 
@@ -71,6 +72,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="30dp"
         android:text="Riesgos:"
+        android:textColor="#34495E"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -82,9 +84,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
         android:layout_marginTop="20dp"
         android:textAlignment="center"
+        android:textColor="@color/textologin"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtRiesgosPills" />
 
@@ -96,6 +98,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:text="Usos:"
+        android:textColor="#34495E"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -106,9 +109,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
         android:layout_marginTop="20dp"
         android:textAlignment="center"
+        android:textColor="@color/textologin"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtUsosPills" />
 
@@ -125,4 +128,4 @@
         app:lottie_rawRes="@raw/pill4" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout >
+</androidx.constraintlayout.widget.ConstraintLayout>
