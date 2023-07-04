@@ -39,6 +39,9 @@
         <action
             android:id="@+id/action_navigation_usuario_to_peso_Detalle"
             app:destination="@id/peso_Detalle" />
+        <action
+            android:id="@+id/action_navigation_usuario_to_configuracion"
+            app:destination="@id/configuracion" />
     </fragment>
 
     <fragment
@@ -117,6 +120,11 @@
         android:name="com.example.u_health.View.fragmentos.Peso_Detalle"
         android:label="fragment_peso__detalle"
         tools:layout="@layout/fragment_peso__detalle" />
+    <fragment
+        android:id="@+id/configuracion"
+        android:name="com.example.u_health.View.fragmentos.Configuracion"
+        android:label="fragment_configuracion"
+        tools:layout="@layout/fragment_configuracion" />
 
 
 </navigation>

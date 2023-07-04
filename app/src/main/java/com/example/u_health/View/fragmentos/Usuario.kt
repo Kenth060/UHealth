@@ -37,7 +37,7 @@ class Usuario : Fragment()
         var Calorias:Int = 0
         val fireDB: FirebaseFirestore = FirebaseFirestore.getInstance()
         val auth : FirebaseAuth = FirebaseAuth.getInstance()
-        val Id= auth.currentUser?.uid
+        val Id= 0//auth.currentUser?.uid
 
         if (Id != null)
         {
@@ -48,7 +48,7 @@ class Usuario : Fragment()
                 val peso=it.get("Peso").toString().toDouble()
                 val Peso_Ideal=(((altura*100)-100+((edad/10)*0.9))*2.2).roundToInt()
 
-                binding.txtUsuario.text=it.get("Nombres").toString()
+                binding.txtUsuario.text=it.get("Nombre").toString()
                 binding.txtAltura.text="${(altura*100).roundToInt()} cm"
                 binding.txtPeso.text="$peso lbs"
                 binding.txtEdad.text="$edad años"
@@ -88,6 +88,28 @@ class Usuario : Fragment()
             editor?.apply()
             }
         }
+
+        binding.cvPesoIdeal.setOnClickListener {
+            val usuario =fireDB.collection("Usuarios").document("Prueba")
+            usuario.get().addOnSuccessListener {
+                val altura=(it.get("Altura").toString().toDouble())
+                val edad=it.get("Edad").toString().toInt()
+                val Peso=it.get("Peso").toString().toDouble()
+                val Peso_Ideal=(((altura*100)-100+((edad/10)*0.9))*2.2).roundToInt()
+
+                Navigation.findNavController(view).navigate(R.id.peso_Detalle)
+                val Preferencias: SharedPreferences? = context?.getSharedPreferences("Datos_Usuario", Context.MODE_PRIVATE)
+                val editor = Preferencias?.edit()
+                editor?.putString("Peso",Peso.toString())
+                editor?.putString("Peso_Ideal",Peso_Ideal.toString())
+                editor?.apply()
+            }
+        }
+
+        binding.btnConfiguracion.setOnClickListener {
+            Navigation.findNavController(view).navigate(R.id.configuracion)
+        }
+
 
         return view
     }

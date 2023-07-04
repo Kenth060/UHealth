@@ -29,7 +29,7 @@ class SplashScreen : AppCompatActivity()
             )
             LogoApp.startAnimation(AnimLogo)
 
-            val intent = Intent(this, Menu::class.java)
+            val intent = Intent(this, Login::class.java)
             //Navigation.findNavController(view).navigate(R.id.frequency)
 
             AnimLogo.setAnimationListener(object: Animation.AnimationListener {

@@ -407,7 +407,7 @@ class CrearPerfil : AppCompatActivity()
         {
             val usuario = hashMapOf("ID" to Id,"Nombres" to Nombre , "Apellidos" to Apellidos ,
                                     "Edad" to edad, "Genero" to genero, "Altura" to altura,
-                                    "Peso" to peso, "Enfermedad" to enfermedad)
+                                    "Peso" to peso)
 
             fireDB.collection("Usuarios").document(Id)
                 .set(usuario)

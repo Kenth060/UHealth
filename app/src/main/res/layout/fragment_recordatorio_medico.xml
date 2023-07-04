@@ -151,4 +151,22 @@
             android:textStyle="bold|italic" />
 
     </androidx.cardview.widget.CardView>
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnEliminarCita"
+        android:layout_width="170dp"
+        android:layout_height="70dp"
+        android:backgroundTint="@color/Blue"
+        android:text="@string/eliminar"
+        android:textColor="@color/textologin"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/InfoRecordatorio" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

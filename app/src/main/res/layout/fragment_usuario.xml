@@ -8,11 +8,19 @@
     android:background="#DCD6D9"
     tools:context=".View.fragmentos.Usuario">
 
+    <ImageView
+        android:id="@+id/btnConfiguracion"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/ic_configuracion"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <androidx.cardview.widget.CardView
         android:id="@+id/materialCardView3"
         android:layout_width="383dp"
         android:layout_height="201dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="25dp"
         app:cardBackgroundColor="#ffffff"
         app:cardCornerRadius="18dp"
         app:cardElevation="28dp"
@@ -63,7 +71,7 @@
                 android:layout_marginTop="22dp"
                 app:lottie_autoPlay="true"
                 app:lottie_loop="true"
-                app:lottie_rawRes="@raw/chillydoctor" />
+                app:lottie_rawRes="@raw/healthy_hearth" />
         </androidx.appcompat.widget.LinearLayoutCompat>
     </androidx.cardview.widget.CardView>
 
@@ -422,6 +430,8 @@
 
 
     </GridLayout>
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

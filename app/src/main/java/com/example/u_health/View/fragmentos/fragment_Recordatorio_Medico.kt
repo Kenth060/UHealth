@@ -2,6 +2,7 @@ package com.example.u_health.View.fragmentos
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.media.tv.TimelineRequest
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -12,6 +13,9 @@ import androidx.navigation.Navigation
 import com.example.u_health.R
 import com.example.u_health.databinding.FragmentCitasBinding
 import com.example.u_health.databinding.FragmentRecordatorioMedicoBinding
+import com.example.u_health.model.Citas
+import com.example.u_health.model.Medicamentos
+import com.example.u_health.model.databaseHelper
 
 class fragment_Recordatorio_Medico : Fragment()
 {
@@ -44,7 +48,9 @@ class fragment_Recordatorio_Medico : Fragment()
             Navigation.findNavController(view).navigate(R.id.navigation_citas)
         }
 
+
         val Prefencias = context?.getSharedPreferences("Datos_Citas", Context.MODE_PRIVATE)
+        val Id = Prefencias?.getString("Id", "")
         val Titulo = Prefencias?.getString("Titulo", "")
         val Medico = Prefencias?.getString("Medico", "")
         val Fecha = Prefencias?.getString("Fecha", "")
@@ -60,6 +66,21 @@ class fragment_Recordatorio_Medico : Fragment()
         binding.txtFechaCitaDet.text=Fecha
         binding.txtHoraDet.text=Hora
         binding.txtCitaInfo.text=Detalles
+
+        binding.btnEliminarCita.setOnClickListener {
+            if (Id != null && Titulo != null && Medico != null && Fecha != null && Hora != null && Detalles != null)
+            {
+                var cita= Citas()
+                cita.Id=Id.toLong()
+                cita.Titulo=Titulo
+                cita.Medico=Medico
+                cita.Fecha=Fecha
+                cita.Hora=Hora
+                cita.Detalles=Detalles
+                databaseHelper(requireContext()).deleteRecordatorios_Citas(cita)
+            }
+            Navigation.findNavController(view).navigate(R.id.navigation_citas)
+        }
 
 
         return view

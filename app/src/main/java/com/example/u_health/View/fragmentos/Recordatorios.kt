@@ -74,5 +74,4 @@ class Recordatorios : Fragment(),RecordatoriosListener
         editor?.putString("Hora", M.Hora)
         editor?.apply()
     }
-
 }
