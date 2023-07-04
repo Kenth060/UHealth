@@ -1,13 +1,17 @@
 package com.example.u_health.View.fragmentos
 
 import android.annotation.SuppressLint
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
 import com.example.u_health.Adapters.MedicamentosProvider
+import com.example.u_health.R
 import com.example.u_health.databinding.FragmentUsuarioBinding
 import com.example.u_health.model.Medicamentos
 import com.google.firebase.auth.FirebaseAuth
@@ -37,7 +41,7 @@ class Usuario : Fragment()
 
         if (Id != null)
         {
-            val usuario =fireDB.collection("Usuarios").document(Id)
+            val usuario =fireDB.collection("Usuarios").document("Prueba")
             usuario.get().addOnSuccessListener {
                 val altura=(it.get("Altura").toString().toDouble())
                 val edad=it.get("Edad").toString().toInt()
@@ -67,6 +71,23 @@ class Usuario : Fragment()
             }
         }
 
+
+        binding.cvPeso.setOnClickListener {
+            val usuario =fireDB.collection("Usuarios").document("Prueba")
+            usuario.get().addOnSuccessListener {
+                val altura=(it.get("Altura").toString().toDouble())
+                val edad=it.get("Edad").toString().toInt()
+                val Peso=it.get("Peso").toString().toDouble()
+                val Peso_Ideal=(((altura*100)-100+((edad/10)*0.9))*2.2).roundToInt()
+
+            Navigation.findNavController(view).navigate(R.id.peso_Detalle)
+            val Preferencias: SharedPreferences? = context?.getSharedPreferences("Datos_Usuario", Context.MODE_PRIVATE)
+            val editor = Preferencias?.edit()
+            editor?.putString("Peso",Peso.toString())
+            editor?.putString("Peso_Ideal",Peso_Ideal.toString())
+            editor?.apply()
+            }
+        }
 
         return view
     }

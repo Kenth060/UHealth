@@ -11,6 +11,7 @@ import androidx.core.app.NotificationCompat
 import com.example.u_health.CantidadPastillaDec
 import com.example.u_health.R
 import com.example.u_health.View.MainActivity
+import com.example.u_health.View.Menu
 
 const val notificationID = 1
 const val channelID = "channel1"
@@ -19,7 +20,7 @@ const val messageExtra = "messageExtra"
 class Notification : BroadcastReceiver() {
 
     override fun onReceive(context: Context, intent: Intent) {
-        val notificationIntent = Intent(context, CantidadPastillaDec::class.java)
+        val notificationIntent = Intent(context, Menu::class.java)
         notificationIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP)
 
         val pendingIntent = PendingIntent.getActivity(context, 0, notificationIntent, PendingIntent.FLAG_IMMUTABLE)

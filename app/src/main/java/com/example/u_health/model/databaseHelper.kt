@@ -119,7 +119,7 @@ class databaseHelper(context: Context) : SQLiteOpenHelper( context,
             put(constants.PROPERTY_PASTILLA, meds.Pastilla)
             put(constants.PROPERTY_DOSIS, meds.Dosis)
             put(constants.PROPERTY_HORA, meds.Hora)
-            put(constants.PROPERTY_CANTIDAD, meds.Cantidad)
+            put(constants.PROPERTY_CANTIDAD, (meds.Cantidad-1))
         }
 
         val result = database.update(

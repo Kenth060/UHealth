@@ -32,6 +32,7 @@ import com.example.u_health.model.Medicamentos
 import com.example.u_health.model.databaseHelper
 import java.util.Calendar
 import java.util.Date
+import kotlin.properties.Delegates
 
 class Frequency : Fragment() {
 
@@ -46,6 +47,10 @@ class Frequency : Fragment() {
     private var _bindingVFD: VistaFrecuenciaDosisBinding? = null
     private val bindingVFD get() = _bindingVFD!!
 
+    private var Id_Recordatorio=0
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -58,6 +63,11 @@ class Frequency : Fragment() {
         _bindingVF = VistaFrecuenciaBinding.inflate(inflater, container, false)
         _bindingVFD = VistaFrecuenciaDosisBinding.inflate(inflater, container, false)
         val view = binding.root
+
+        val MisPreferencias = context?.getSharedPreferences("Ids", Context.MODE_PRIVATE)
+        val Edit = MisPreferencias?.edit()
+        Id_Recordatorio= MisPreferencias?.getInt("Id_Recordatorios",0)!!
+        Id_Recordatorio = Id_Recordatorio!! + 1
 
         valida()
         bindingVFD.btnAceptar.setOnClickListener {
@@ -77,24 +87,29 @@ class Frequency : Fragment() {
                 val frecuenciaDatosSeleccionado = sharedPreferences?.getString("frecuenciaDato", "")
                 val hora =  binding.txtHora.text.toString()
                 val dosis = binding.txtDosis.text.toString()
-                val MisPreferencias = context?.getSharedPreferences("Id's", Context.MODE_PRIVATE)
+
+               /* val MisPreferencias = context?.getSharedPreferences("Id's", Context.MODE_PRIVATE)
                 val edit = MisPreferencias?.edit()
                 edit?.putInt("Id_Recordatorios",1)
                 edit?.apply()
-                var Id=MisPreferencias?.getInt("Id_Recordatorios",0)
+                var Id= MisPreferencias?.getInt("Id_Recordatorios",0)*/
 
-                if (medicamentoSeleccionado != null && frecuenciaDatosSeleccionado != null && Id != null)
+                if (medicamentoSeleccionado != null && frecuenciaDatosSeleccionado != null)
                 {
                     var med=Medicamentos()
-                    med.Id=Id.toLong()
+                    med.Id=Id_Recordatorio.toLong()
                     med.Pastilla=medicamentoSeleccionado
                     med.Dosis=frecuenciaDatosSeleccionado
                     med.Hora=hora
                     med.Cantidad=dosis.toInt()
                     databaseHelper(requireContext()).insertarRecordatorios_Medicamentos(med)
-                    Id++
+
+                    Edit?.putInt("Id_Recordatorios",Id_Recordatorio)
+                    Edit?.apply()
+
+                   /* Id++
                     edit?.putInt("Id_Recordatorios",Id)
-                    edit?.apply()
+                    edit?.apply()*/
                 }
 
                 Toast.makeText(requireContext(), "Guardado", Toast.LENGTH_SHORT).show()
@@ -226,8 +241,20 @@ class Frequency : Fragment() {
         val sharedPreferences = context?.getSharedPreferences("mi_pref", Context.MODE_PRIVATE)
         val medicamentoSeleccionado = sharedPreferences?.getString("selectedItem", "")
         val message = "detalles"
+
+        val frecuenciaDatosSeleccionado = sharedPreferences?.getString("frecuenciaDato", "")
+        val hora =  binding.txtHora.text.toString()
+        val dosis = binding.txtDosis.text.toString()
+
+
         intent.putExtra(titleExtraRecordatorio,medicamentoSeleccionado.toString())
         intent.putExtra(messageExtraRecordatorio,message)
+        intent.putExtra("Id",Id_Recordatorio.toString())
+        intent.putExtra("Pastilla",medicamentoSeleccionado)
+        intent.putExtra("Dosis",frecuenciaDatosSeleccionado)
+        intent.putExtra("Hora",hora)
+        intent.putExtra("Cantidad",dosis)
+
 
         val pendingIntent = PendingIntent.getBroadcast(
             requireContext(),

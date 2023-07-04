@@ -25,6 +25,14 @@
         <item name="fontFamily">@font/courgette</item>
     </style>
 
+
+    <style name="Texto" parent="">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/textologin</item>
+        <item name="android:textStyle">normal</item>
+        <item name="fontFamily">@font/courgette</item>
+    </style>
+
     <style name="ButtonNoBorder" parent="Widget.AppCompat.Button">
         <item name="android:background">@null</item>
         <item name="android:padding">0dp</item>

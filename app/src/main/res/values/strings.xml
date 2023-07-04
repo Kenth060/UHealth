@@ -54,5 +54,13 @@
     <string name="detalle">Detalles</string>
 
     <string name="Informacion_Detalle">Detalles de la Informacion</string>
+    <string name="Peso_Actual">Su Peso actual es</string>
+    <string name="consejos_para_bajar_de_peso">Consejos para Bajar de Peso</string>
+    <string name="consejos_para_subir_de_peso">Consejos para Subir de Peso</string>
+    <string name="consejos_bajar">1. Reduce las horas entre las comidas\n2. Come de forma consciente y más lentamente\n3. Controla las cantidades de comida\n4. Presta atención a los condimentos\n5. Haz una cena ligera\n6. Bebe mucha agua\n7. Evita el sedentarismo\n8. Prescinde de los dulces</string>
+    <string name="peso_">130 lbs</string>
+    <string name="Necesita_perder">Necesita perder</string>
+    <string name="Necesita_ganar">Necesita ganar</string>
+    <string name="consejos_subir">1. Come con más frecuencia.\n2. Elige alimentos con muchos nutrientes\n3. Agrega aderezos.\n4. Prueba licuados y batidos de frutas.\n5. Controla qué bebes y cuándo.\n6. Bebe mucha agua\n7. Haz ejercicio.</string>
 
 </resources>
