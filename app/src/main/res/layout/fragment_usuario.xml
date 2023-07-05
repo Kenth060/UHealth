@@ -424,6 +424,17 @@
                     android:textSize="16sp"
                     android:textStyle="bold" />
 
+                <TextView
+                    android:layout_gravity="center|bottom"
+                    android:layout_marginTop="5dp"
+                    android:id="@+id/txtEstadoIMC"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Normal"
+                    android:textColor="@color/textologin"
+                    android:textSize="16sp"
+                    android:textStyle="bold"/>
+
             </androidx.appcompat.widget.LinearLayoutCompat>
 
         </androidx.cardview.widget.CardView>

@@ -62,5 +62,8 @@
     <string name="Necesita_perder">Necesita perder</string>
     <string name="Necesita_ganar">Necesita ganar</string>
     <string name="consejos_subir">1. Come con más frecuencia.\n2. Elige alimentos con muchos nutrientes\n3. Agrega aderezos.\n4. Prueba licuados y batidos de frutas.\n5. Controla qué bebes y cuándo.\n6. Bebe mucha agua\n7. Haz ejercicio.</string>
+    <string name="cerrar_sesion">Cerrar Sesion</string>
+    <string name="actualizar_perfil">Actualizar Perfil</string>
+    <string name="Configuracion">Configuración</string>
 
 </resources>

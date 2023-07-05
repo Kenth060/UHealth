@@ -1,5 +1,6 @@
 package com.example.u_health.View
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -34,7 +35,7 @@ class CrearCuenta : AppCompatActivity()
             {
                 addCuentaUsuario()
 
-                //onBackPressed()
+                startActivity(Intent(this, Login::class.java))
 
             }
             else

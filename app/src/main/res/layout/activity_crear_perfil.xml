@@ -171,6 +171,7 @@
 
     <TextView
         android:id="@+id/TextViewActividadEnfermedad"
+        android:visibility="invisible"
         android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="156dp"
@@ -189,6 +190,7 @@
     <Button
         android:id="@+id/btnCrearPerfil"
         android:layout_width="wrap_content"
+        android:layout_marginBottom="50dp"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/Blue"
         android:text="@string/guardar"
