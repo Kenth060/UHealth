@@ -104,7 +104,7 @@ class CrearPerfil : AppCompatActivity()
             "Masculino","Femenino","Prefiero no decir","Otro"
         )
         //peso
-        bindingPeso.numberPicker1.minValue = 0
+        bindingPeso.numberPicker1.minValue = 120
         bindingPeso.numberPicker1.maxValue = 300
         bindingPeso.numberPicker2.minValue = 0
         bindingPeso.numberPicker2.maxValue = 9

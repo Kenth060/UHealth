@@ -14,7 +14,8 @@ import kotlin.math.absoluteValue
 import kotlin.math.roundToInt
 
 
-class Peso_Detalle : Fragment() {
+class Peso_Detalle : Fragment()
+{
 
 
     private var _binding: FragmentPesoDetalleBinding? = null

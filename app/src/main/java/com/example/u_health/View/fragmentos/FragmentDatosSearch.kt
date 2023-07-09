@@ -84,6 +84,13 @@ class FragmentDatosSearch : Fragment() {
     }
     private fun add() : Array<String> {
         val medicamentos: Array<String> = arrayOf(
+            "Acetaminofen 400 mg",
+            "Hidrocortisona 100mg",
+            "Ibuprofeno 400 mg",
+            "Panadol",
+            "Virogrip",
+            "Gabapentina",
+            "Vitaflenaco",
             "Losartan 100mg",
             "Amlodipino 5mg",
             "Enalapril 20mg",
