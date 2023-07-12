@@ -7,6 +7,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.widget.Toolbar
+import androidx.navigation.Navigation
 import com.example.u_health.R
 import com.example.u_health.databinding.FragmentPesoDetalleBinding
 import com.example.u_health.databinding.FragmentUsuarioBinding
@@ -26,7 +28,7 @@ class Peso_Detalle : Fragment()
         super.onCreate(savedInstanceState)
     }
 
-    @SuppressLint("SetTextI18n")
+    @SuppressLint("SetTextI18n", "ResourceAsColor")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -35,13 +37,21 @@ class Peso_Detalle : Fragment()
         _binding = FragmentPesoDetalleBinding.inflate(inflater, container, false)
         val view = binding.root
 
+        val toolbar: Toolbar = binding.tbPeso
+        toolbar.title = getString(R.string.Peso_Detalle)
+        toolbar.setNavigationIcon(R.drawable.ic_back)
+        toolbar.navigationIcon?.setTint(R.color.textologin)
+        toolbar.setNavigationOnClickListener {
+            Navigation.findNavController(view).navigate(R.id.navigation_usuario) }
+
         val Prefencias = context?.getSharedPreferences("Datos_Usuario", Context.MODE_PRIVATE)
         val Peso = Prefencias?.getString("Peso", "")
         val Peso_Ideal = Prefencias?.getString("Peso_Ideal", "")
+        val estado = Prefencias?.getString("Estado", "")
 
 
         binding.txtPesoActual.text=getString(R.string.Peso_Actual)+" $Peso lbs"
-        binding.txtPesoIdeal.text="$Peso_Ideal lbs"
+        binding.txtPesoIdeal.text="$estado"
 
         val Peso_Necesario= ((Peso?.toDouble() ?: 0.0 ) - (Peso_Ideal?.toInt() ?: 0 )).roundToInt()
 

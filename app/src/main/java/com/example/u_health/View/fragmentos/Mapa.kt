@@ -86,7 +86,7 @@ class Mapa : Fragment() , OnMapReadyCallback {
        enableLocation()
 
         val zoom = 16f
-        val miubicacion = LatLng(12.131854928909098, -86.2698014278141)
+        val miubicacion = LatLng(12.132015416752875, -86.26994967959412)
         MAP?.animateCamera(CameraUpdateFactory.newLatLngZoom(miubicacion, zoom))
 
         if (ActivityCompat.checkSelfPermission(

@@ -119,7 +119,7 @@
         android:id="@+id/peso_Detalle"
         android:name="com.example.u_health.View.fragmentos.Peso_Detalle"
         android:label="fragment_peso__detalle"
-        tools:layout="@layout/fragment_peso__detalle" />
+        tools:layout="@layout/fragment_peso_detalle" />
     <fragment
         android:id="@+id/configuracion"
         android:name="com.example.u_health.View.fragmentos.Configuracion"

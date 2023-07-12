@@ -27,10 +27,10 @@
 
 
     <style name="Texto" parent="">
-        <item name="android:textSize">18sp</item>
+        <item name="android:textSize">17sp</item>
         <item name="android:textColor">@color/textologin</item>
         <item name="android:textStyle">normal</item>
-        <item name="fontFamily">@font/courgette</item>
+        <item name="fontFamily">@font/amethysta</item>
     </style>
 
     <style name="ButtonNoBorder" parent="Widget.AppCompat.Button">

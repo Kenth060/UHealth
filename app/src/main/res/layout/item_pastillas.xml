@@ -6,6 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
+
+
     <androidx.cardview.widget.CardView
         android:id="@+id/CVPastilla"
         android:layout_width="370dp"
@@ -20,34 +22,35 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="5dp"
+            android:src="@drawable/ic_pastillas"/>
+
         <TextView
             android:id="@+id/txtNombrePastilla"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
+            android:layout_marginStart="85dp"
             android:layout_marginTop="10dp"
             android:text="Acetominofen"
             android:textAllCaps="false"
             android:textColor="@color/DarkBlue"
-            android:textSize="18sp"
+            android:textSize="19sp"
             android:textStyle="bold|italic" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="39dp"
-            android:layout_marginLeft="15dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="75dp"
             android:text="Ver mas informacion acerca del farmaco..."
             android:textColor="@color/Gray" />
 
-        <com.airbnb.lottie.LottieAnimationView
-            android:id="@+id/lottieAnimationView"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_marginStart="300dp"
-            app:lottie_autoPlay="true"
-            app:lottie_loop="true"
-            app:lottie_rawRes="@raw/medicine" />
+
 
     </androidx.cardview.widget.CardView>
 

@@ -1,5 +1,6 @@
 package com.example.u_health.View.fragmentos
 
+import android.annotation.SuppressLint
 import android.app.AlarmManager
 import android.app.AlertDialog
 import android.app.NotificationChannel
@@ -15,6 +16,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.annotation.RequiresApi
+import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import com.example.u_health.Adapters.MedicamentosProvider
@@ -33,6 +35,7 @@ class fragmentAddCita : Fragment()
         super.onCreate(savedInstanceState)
 
     }
+    @SuppressLint("ResourceAsColor")
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -51,9 +54,13 @@ class fragmentAddCita : Fragment()
         var Id_cita=MisPreferencias?.getInt("Id_Citas",0)
         Id_cita = Id_cita!! + 1
 
-        binding.btnCancelar.setOnClickListener {
-            Navigation.findNavController(view).navigate(R.id.navigation_citas)
-        }
+        val toolbar: Toolbar = binding.tbCitas
+        toolbar.title = getString(R.string.Cita)
+        toolbar.setNavigationIcon(R.drawable.ic_back)
+        toolbar.navigationIcon?.setTint(R.color.textologin)
+        toolbar.setNavigationOnClickListener {
+            Navigation.findNavController(view).navigate(R.id.navigation_citas) }
+
         binding.fecha.setOnClickListener {
             showDatePickerDialog()
         }
@@ -86,6 +93,10 @@ class fragmentAddCita : Fragment()
                 Edit?.apply()
             }else
                 Toast.makeText(requireContext(), "Rellene los datos", Toast.LENGTH_SHORT).show()
+        }
+
+        binding.btnCancelCita.setOnClickListener {
+            Navigation.findNavController(view).navigate(R.id.navigation_citas)
         }
 
         return view

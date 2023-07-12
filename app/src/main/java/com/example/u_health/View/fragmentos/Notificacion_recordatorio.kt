@@ -6,10 +6,8 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import androidx.core.app.NotificationCompat
-import com.example.u_health.CantidadPastillaDec
+import com.example.u_health.View.CantidadPastillaDec
 import com.example.u_health.R
-import com.example.u_health.View.Login
-import com.example.u_health.model.Medicamentos
 
 const val notificationRecordatorioID = 2
 const val channelRecordatorioID = "channel2"

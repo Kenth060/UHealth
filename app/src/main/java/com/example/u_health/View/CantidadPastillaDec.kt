@@ -1,10 +1,9 @@
-package com.example.u_health
+package com.example.u_health.View
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.example.u_health.databinding.ActivityCantidadPastillaDecBinding
-import com.example.u_health.databinding.ActivityLoginBinding
 import com.example.u_health.model.Medicamentos
 import com.example.u_health.model.databaseHelper
 

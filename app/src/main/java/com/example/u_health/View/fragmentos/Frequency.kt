@@ -236,11 +236,12 @@ class Frequency : Fragment() {
         val notificationManager = requireContext().getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         notificationManager.createNotificationChannel(channel)
     }
-    private fun scheduleNotification() {
+    private fun scheduleNotification()
+    {
         val intent = Intent(requireContext(), Notificacion_recordatorio::class.java)
         val sharedPreferences = context?.getSharedPreferences("mi_pref", Context.MODE_PRIVATE)
         val medicamentoSeleccionado = sharedPreferences?.getString("selectedItem", "")
-        val message = "detalles"
+        val message = "Es hora de tomar su pastilla"
 
         val frecuenciaDatosSeleccionado = sharedPreferences?.getString("frecuenciaDato", "")
         val hora =  binding.txtHora.text.toString()

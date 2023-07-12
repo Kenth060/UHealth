@@ -89,6 +89,7 @@ class Usuario : Fragment()
                     val altura = (it.get("Altura").toString().toDouble())
                     val edad = it.get("Edad").toString().toInt()
                     val Peso = it.get("Peso").toString().toDouble()
+                    val Estado = (binding.txtEstadoIMC.text).toString()
                     val Peso_Ideal =
                         (((altura * 100) - 100 + ((edad / 10) * 0.9)) * 2.2).roundToInt()
 
@@ -97,13 +98,13 @@ class Usuario : Fragment()
                     val editor = Preferencias?.edit()
                     editor?.putString("Peso", Peso.toString())
                     editor?.putString("Peso_Ideal", Peso_Ideal.toString())
+                    editor?.putString("Estado", Estado)
                     editor?.apply()
                 }
             }
         }
 
         binding.cvPesoIdeal.setOnClickListener {
-
             if( Id != null )
             {
                 val usuario = fireDB.collection("Usuarios").document(Id)
@@ -111,19 +112,19 @@ class Usuario : Fragment()
                     val altura = (it.get("Altura").toString().toDouble())
                     val edad = it.get("Edad").toString().toInt()
                     val Peso = it.get("Peso").toString().toDouble()
+                    val Estado = (binding.txtEstadoIMC.text).toString()
                     val Peso_Ideal =
                         (((altura * 100) - 100 + ((edad / 10) * 0.9)) * 2.2).roundToInt()
 
                     Navigation.findNavController(view).navigate(R.id.peso_Detalle)
-                    val Preferencias: SharedPreferences? =
-                        context?.getSharedPreferences("Datos_Usuario", Context.MODE_PRIVATE)
+                    val Preferencias: SharedPreferences? = context?.getSharedPreferences("Datos_Usuario", Context.MODE_PRIVATE)
                     val editor = Preferencias?.edit()
                     editor?.putString("Peso", Peso.toString())
                     editor?.putString("Peso_Ideal", Peso_Ideal.toString())
+                    editor?.putString("Estado", Estado)
                     editor?.apply()
                 }
             }
-
         }
 
         binding.btnConfiguracion.setOnClickListener {
