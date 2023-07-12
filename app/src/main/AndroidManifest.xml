@@ -22,9 +22,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.UHealth"
         tools:targetApi="33" >
-        <activity
-            android:name=".Actualizar_Perfil"
-            android:exported="false" />
+
         <activity
             android:name=".View.CantidadPastillaDec"
             android:exported="false" />

@@ -26,6 +26,7 @@ import com.example.u_health.databinding.VistaPesoBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import java.util.Calendar
+import kotlin.math.roundToInt
 
 class CrearPerfil : AppCompatActivity()
 {
@@ -47,11 +48,49 @@ class CrearPerfil : AppCompatActivity()
         bindingEnfermedad = VistaEnfermedadBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val fireDB: FirebaseFirestore = FirebaseFirestore.getInstance()
+
+        val firebaseAuth: FirebaseAuth = FirebaseAuth.getInstance()
+
+        val UsuarioActual = firebaseAuth.currentUser
+
+        val Id= UsuarioActual?.uid
+
+        if (Id != null)
+        {
+            val usuario =fireDB.collection("Usuarios").document(Id)
+            usuario.get().addOnSuccessListener {
+                val nombres = it.get("Nombres").toString()
+                val apellidos = it.get("Apellidos").toString()
+                val edad=it.get("Edad").toString()
+                val altura=it.get("Altura").toString()
+                val genero = it.get("Genero").toString()
+                val peso=it.get("Peso").toString()
+
+                binding.txtNombrePerfil.setText(nombres)
+                binding.txtApellidoPerfil.setText(apellidos)
+                binding.TextViewActividadFechaNac.hint = edad
+                binding.TextViewActividadAltura.hint = altura
+                binding.TextViewActividadGenero.hint = genero
+                binding.TextViewActividadPeso.hint = peso
+
+                editor.putString("edad", edad)
+                editor.putString("altura", altura)
+                editor.putString("genero", genero)
+                editor.putString("peso", peso)
+                editor.apply()
+            }
+        }
+
+
         //Inicializando el sharedPreferences de forma global
         sharedPref = getSharedPreferences("MiSharedPreferences", Context.MODE_PRIVATE)
         editor = sharedPref.edit()
         binding.btnCrearPerfil.setOnClickListener {
+
             Agregar_Usuario()
+
+
         }
 
 
@@ -403,7 +442,8 @@ class CrearPerfil : AppCompatActivity()
 
         val Id= UsuarioActual?.uid
 
-        if (Id != null)
+        if (Id != null && Nombre != "" && Apellidos != "" && edad != "" && genero != ""
+             && altura != "" && peso != "" )
         {
             val usuario = hashMapOf("ID" to Id,"Nombres" to Nombre , "Apellidos" to Apellidos ,
                                     "Edad" to edad, "Genero" to genero, "Altura" to altura,
@@ -416,7 +456,7 @@ class CrearPerfil : AppCompatActivity()
 
         }
         else
-        {Toast.makeText(this, "No se pudo crear el perfil", Toast.LENGTH_SHORT).show() }
+        {Toast.makeText(this, "Rellene los datos correctamente", Toast.LENGTH_SHORT).show() }
 
 
     //limpiando los datos que tenga almacenado sharedPreference

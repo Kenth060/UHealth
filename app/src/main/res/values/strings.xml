@@ -67,5 +67,6 @@
     <string name="Configuracion">Configuración</string>
     <string name="Cita">Agregar Citas</string>
     <string name="Peso_Detalle">Detalles sobre su Peso</string>
+    <string name="Imc">Indice de Masa corporal</string>
 
 </resources>
