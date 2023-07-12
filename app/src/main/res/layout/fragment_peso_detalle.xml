@@ -34,7 +34,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         app:cardBackgroundColor="@color/GrisClarito"
-        app:cardCornerRadius="30dp"
+        app:cardCornerRadius="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/abPeso">
@@ -69,7 +69,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         app:cardBackgroundColor="@color/GrisClarito"
-        app:cardCornerRadius="30dp"
+        app:cardCornerRadius="15dp"
         app:layout_constraintEnd_toStartOf="@+id/cardView3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView">
@@ -113,7 +113,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         app:cardBackgroundColor="@color/GrisClarito"
-        app:cardCornerRadius="30dp"
+        app:cardCornerRadius="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/cardView2"
         app:layout_constraintTop_toBottomOf="@+id/cardView">
@@ -157,7 +157,7 @@
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
         app:cardBackgroundColor="@color/GrisClarito"
-        app:cardCornerRadius="30dp"
+        app:cardCornerRadius="15dp"
         app:layout_constraintTop_toBottomOf="@id/cardView2"
         tools:layout_editor_absoluteX="10dp">
 
