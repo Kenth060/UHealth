@@ -137,18 +137,18 @@ class Usuario : Fragment()
                 val usuario = fireDB.collection("Usuarios").document(Id)
                 usuario.get().addOnSuccessListener {
                     val altura = (it.get("Altura").toString().toDouble())
-                   // val edad = it.get("Edad").toString().toInt()
+                    val edad = it.get("Edad").toString().toInt()
                     val Peso = it.get("Peso").toString().toDouble()
-                   /* val Estado = (binding.txtEstadoIMC.text).toString()
-                    val Peso_Ideal =
-                        (((altura * 100) - 100 + ((edad / 10) * 0.9)) * 2.2).roundToInt()*/
+                    val genero = it.get("Genero").toString()
 
-                    val IMC=((Peso/2.2)/altura.pow(2)).roundToInt()
+                    val IMC=((Peso/2.2)/altura.pow(2))
 
                     Navigation.findNavController(view).navigate(R.id.imc)
                     val Preferencias: SharedPreferences? = context?.getSharedPreferences("Datos_Usuario", Context.MODE_PRIVATE)
                     val editor = Preferencias?.edit()
                     editor?.putString("IMC", IMC.toString())
+                    editor?.putString("Edad", edad.toString())
+                    editor?.putString("Genero", genero)
                     editor?.apply()
                 }
             }

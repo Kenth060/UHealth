@@ -44,7 +44,7 @@ class Recordatorios : Fragment(),RecordatoriosListener
         
         binding.btnAdd.setOnClickListener {
 
-            Navigation.findNavController(view).navigate(R.id.fragmentDatosSearch2)
+            Navigation.findNavController(view).navigate(R.id.tratamiento)
 
             binding.btnAdd.visibility = View.INVISIBLE
         }
@@ -70,7 +70,7 @@ class Recordatorios : Fragment(),RecordatoriosListener
         editor?.putString("Id", M.Id.toString())
         editor?.putString("Pastilla", M.Pastilla)
         editor?.putString("Cantidad", M.Cantidad.toString())
-        editor?.putString("Dosis", M.Dosis)
+        editor?.putString("Dosis", M.Frecuencia)
         editor?.putString("Hora", M.Hora)
         editor?.apply()
     }

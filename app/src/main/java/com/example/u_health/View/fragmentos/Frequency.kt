@@ -99,7 +99,7 @@ class Frequency : Fragment() {
                     var med=Medicamentos()
                     med.Id=Id_Recordatorio.toLong()
                     med.Pastilla=medicamentoSeleccionado
-                    med.Dosis=frecuenciaDatosSeleccionado
+                    med.Frecuencia=frecuenciaDatosSeleccionado
                     med.Hora=hora
                     med.Cantidad=dosis.toInt()
                     databaseHelper(requireContext()).insertarRecordatorios_Medicamentos(med)

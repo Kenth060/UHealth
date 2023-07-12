@@ -11,11 +11,13 @@ class databaseHelper(context: Context) : SQLiteOpenHelper( context,
     constants.DATABASE_NAME,
     null,
     constants.DATABASE_VERSION) {
-    override fun onCreate(db: SQLiteDatabase?) {
+    override fun onCreate(db: SQLiteDatabase?)
+    {
         val createTableMeds = "CREATE TABLE ${constants.ENTITY_MEDICAMENTOS} ( " +
                 "${constants.PROPERTY_ID}   INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 "${constants.PROPERTY_PASTILLA} VARCHAR(120)," +
-                "${constants.PROPERTY_DOSIS} VARCHAR(120)," +
+                "${constants.PROPERTY_TIPO} VARCHAR(120)," +
+                "${constants.PROPERTY_FRECUENCIA} VARCHAR(120)," +
                 "${constants.PROPERTY_HORA} VARCHAR(120)," +
                 "${constants.PROPERTY_CANTIDAD} INT)"
 
@@ -47,7 +49,8 @@ class databaseHelper(context: Context) : SQLiteOpenHelper( context,
                 val med = Medicamentos()
                 med.Id = result.getLong(result.getColumnIndex(constants.PROPERTY_ID))
                 med.Pastilla = result.getString(result.getColumnIndex(constants.PROPERTY_PASTILLA))
-                med.Dosis = result.getString(result.getColumnIndex(constants.PROPERTY_DOSIS))
+                med.Tipo = result.getString(result.getColumnIndex(constants.PROPERTY_TIPO))
+                med.Frecuencia=result.getString(result.getColumnIndex(constants.PROPERTY_FRECUENCIA))
                 med.Hora = result.getString(result.getColumnIndex(constants.PROPERTY_HORA))
                 med.Cantidad = result.getInt(result.getColumnIndex(constants.PROPERTY_CANTIDAD))
                 meds.add(med)
@@ -84,8 +87,10 @@ class databaseHelper(context: Context) : SQLiteOpenHelper( context,
     {
         val database = this.writableDatabase
         val contentValues = ContentValues().apply {
+            put(constants.PROPERTY_ID, meds.Id)
             put(constants.PROPERTY_PASTILLA, meds.Pastilla)
-            put(constants.PROPERTY_DOSIS, meds.Dosis)
+            put(constants.PROPERTY_TIPO, meds.Tipo)
+            put(constants.PROPERTY_FRECUENCIA, meds.Frecuencia)
             put(constants.PROPERTY_HORA, meds.Hora)
             put(constants.PROPERTY_CANTIDAD, meds.Cantidad)
         }
@@ -117,7 +122,8 @@ class databaseHelper(context: Context) : SQLiteOpenHelper( context,
         val database = this.writableDatabase
         val contentValues = ContentValues().apply {
             put(constants.PROPERTY_PASTILLA, meds.Pastilla)
-            put(constants.PROPERTY_DOSIS, meds.Dosis)
+            put(constants.PROPERTY_TIPO, meds.Tipo)
+            put(constants.PROPERTY_FRECUENCIA, meds.Frecuencia)
             put(constants.PROPERTY_HORA, meds.Hora)
             put(constants.PROPERTY_CANTIDAD, (meds.Cantidad-1))
         }

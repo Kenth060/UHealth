@@ -11,8 +11,8 @@
         android:label="@string/title_recordatorios"
         tools:layout="@layout/fragment_recordatorios" >
         <action
-            android:id="@+id/action_navigation_recordatorios_to_fragmentDatosSearch2"
-            app:destination="@id/fragmentDatosSearch2" />
+            android:id="@+id/action_navigation_recordatorios_to_tratamiento"
+            app:destination="@id/tratamiento" />
         <action
             android:id="@+id/action_navigation_recordatorios_to_vista_medicamento"
             app:destination="@id/vista_medicamento" />
@@ -66,29 +66,17 @@
         android:id="@+id/fragmentDatosSearch2"
         android:name="com.example.u_health.View.fragmentos.FragmentDatosSearch"
         android:label="fragment_datos_search"
-        tools:layout="@layout/fragment_datos_search" >
-        <action
-            android:id="@+id/action_fragmentDatosSearch2_to_frequencyData"
-            app:destination="@id/frequencyData" />
-    </fragment>
+        tools:layout="@layout/fragment_datos_search" />
     <fragment
         android:id="@+id/frequencyData"
         android:name="com.example.u_health.View.fragmentos.FrequencyData"
         android:label="fragment_frequency_data"
-        tools:layout="@layout/fragment_frequency_data" >
-        <action
-            android:id="@+id/action_frequencyData_to_frequency"
-            app:destination="@id/frequency" />
-    </fragment>
+        tools:layout="@layout/fragment_frequency_data" />
     <fragment
         android:id="@+id/frequency"
         android:name="com.example.u_health.View.fragmentos.Frequency"
         android:label="fragment_frequency"
-        tools:layout="@layout/fragment_frequency" >
-        <action
-            android:id="@+id/action_frequency_to_navigation_recordatorios"
-            app:destination="@id/navigation_recordatorios" />
-    </fragment>
+        tools:layout="@layout/fragment_frequency" />
     <fragment
         android:id="@+id/vista_medicamento"
         android:name="com.example.u_health.View.fragmentos.vista_medicamento"
@@ -133,6 +121,11 @@
         android:name="com.example.u_health.View.fragmentos.imc"
         android:label="fragment_imc"
         tools:layout="@layout/fragment_imc" />
+    <fragment
+        android:id="@+id/tratamiento"
+        android:name="com.example.u_health.View.fragmentos.Tratamiento"
+        android:label="fragment_tratamiento"
+        tools:layout="@layout/fragment_tratamiento" />
 
 
 </navigation>

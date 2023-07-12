@@ -21,13 +21,15 @@ class Notificacion_recordatorio : BroadcastReceiver() {
 
         var Id=intent.getStringExtra("Id")
         var Pastilla=intent.getStringExtra("Pastilla")
-        var Dosis=intent.getStringExtra("Dosis")
+        var Tipo=intent.getStringExtra("Tipo")
+        var Frecuencia=intent.getStringExtra("Frecuencia")
         var Hora=intent.getStringExtra("Hora")
         var Cantidad=intent.getStringExtra("Cantidad")
 
         notificationIntent.putExtra("Id",Id)
         notificationIntent.putExtra("Pastilla",Pastilla)
-        notificationIntent.putExtra("Dosis",Dosis)
+        notificationIntent.putExtra("Tipo",Tipo)
+        notificationIntent.putExtra("Frecuencia",Frecuencia)
         notificationIntent.putExtra("Hora",Hora)
         notificationIntent.putExtra("Cantidad",Cantidad)
 

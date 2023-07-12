@@ -16,7 +16,7 @@ class RecordatoriosViewHolder (view: View) : RecyclerView.ViewHolder(view)
     fun render(meds: Medicamentos)
     {
         Nombre_Pastilla.text=meds.Pastilla
-        Frecuencia_Pastilla.text="${meds.Dosis} - ${meds.Hora}"
+        Frecuencia_Pastilla.text="${meds.Frecuencia} - ${meds.Hora}"
         Cantidad_Pastilla.text="${meds.Cantidad} capsula(s) restantes"
     }
 }

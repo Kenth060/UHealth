@@ -13,7 +13,8 @@ object constants
     //-----------//
     const val PROPERTY_ID= "id"
     const val PROPERTY_PASTILLA= "pastilla"
-    const val PROPERTY_DOSIS= "dosis"
+    const val PROPERTY_TIPO= "tipo"
+    const val PROPERTY_FRECUENCIA= "frecuencia"
     const val PROPERTY_HORA= "hora"
     const val PROPERTY_CANTIDAD= "cantidad"
 

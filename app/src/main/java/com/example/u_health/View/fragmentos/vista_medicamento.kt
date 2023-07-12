@@ -65,7 +65,7 @@ class vista_medicamento : Fragment()
                 var med=Medicamentos()
                 med.Id=Id.toLong()
                 med.Pastilla=Pastilla
-                med.Dosis=Dosis
+                med.Frecuencia=Dosis
                 med.Hora=Hora
                 med.Cantidad=Cantidad.toInt()
                 databaseHelper(requireContext()).deleteRecordatorios_Medicamentos(med)

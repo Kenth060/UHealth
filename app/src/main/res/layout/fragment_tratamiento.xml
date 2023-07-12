@@ -3,14 +3,13 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/fgAgregarCita"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/GrisClarito"
-    tools:context=".View.fragmentos.fragmentAddCita">
+    android:background="#DFDEDE"
+    tools:context=".View.fragmentos.Tratamiento">
 
     <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/abCitas"
+        android:id="@+id/abTratamiento"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/Blue"
@@ -19,92 +18,90 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.appcompat.widget.Toolbar
-            android:id="@+id/tb_citas"
+            android:id="@+id/tb_Tratamiento"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:layout_editor_absoluteX="3dp"
-            tools:layout_editor_absoluteY="404dp" />
+            android:layout_height="wrap_content"/>
 
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/txtEspecialidad"
+        android:id="@+id/txtMedicamento"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_marginTop="5dp"
-        android:paddingStart="15dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginHorizontal="5dp"
         android:background="@color/white"
         android:fontFamily="sans-serif"
-        android:hint="@string/especialidad"
+        android:hint="@string/Medicamento"
+        android:paddingStart="15dp"
         android:textColorHint="@color/textologin"
         android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@+id/abTratamiento"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/abCitas" />
+        app:layout_constraintStart_toStartOf="parent" />
 
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/txtDoctor"
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:id="@+id/bckTiposMeds"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_marginTop="5dp"
-        android:paddingStart="15dp"
-        android:background="@color/white"
-        android:hint="@string/doctor"
+        android:layout_marginTop="7dp"
+        android:hint="@string/Tipo_Med"
         android:textColorHint="@color/textologin"
+        app:boxBackgroundColor="@color/GrisClarito"
+        app:boxStrokeColor="@color/Blue"
+        app:hintTextAppearance="@style/TextAppearance.AppCompat.Small"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtEspecialidad"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toBottomOf="@+id/txtMedicamento">
 
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:id="@+id/linearLayoutCompat"
+        <AutoCompleteTextView
+            android:id="@+id/cbTipoMeds"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="5dp"
+            android:layout_weight="1"
+            android:inputType="none" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:id="@+id/bckFrecuenciaMed"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="7dp"
+        android:hint="@string/Frecuencia"
+        android:textColorHint="@color/textologin"
+        app:boxBackgroundColor="@color/GrisClarito"
+        app:boxStrokeColor="@color/Blue"
+        app:hintTextAppearance="@style/TextAppearance.AppCompat.Small"
+        app:layout_constraintTop_toBottomOf="@id/bckTiposMeds">
+
+        <AutoCompleteTextView
+            android:id="@+id/cbFrecuenciaMed"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="5dp"
+            android:layout_weight="1"
+            android:inputType="none" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/linearLayoutHora"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginHorizontal="5dp"
         android:background="@color/white"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtDoctor">
+        app:layout_constraintTop_toBottomOf="@id/bckFrecuenciaMed">
 
         <Button
-            android:id="@+id/fecha"
-            style="@style/ButtonNoBorder"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="15dp"
-            android:background="@drawable/borde_null"
-            android:text="@string/fecha"
-            android:textColor="@color/textologin"
-            android:textSize="16sp" />
-
-        <TextView
-            android:id="@+id/txtFecha"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="230dp"
-            android:layout_marginTop="10dp"
-            android:text="@string/dd_mm_yyyy"
-            android:textColor="@color/textologin"
-            android:textSize="16sp" />
-
-    </androidx.appcompat.widget.LinearLayoutCompat>
-
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:id="@+id/linearLayoutCompat2"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginTop="5dp"
-        android:background="@color/white"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayoutCompat">
-
-        <Button
-            android:id="@+id/hora"
+            android:id="@+id/btnHora"
             style="@style/ButtonNoBorder"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -116,7 +113,7 @@
             android:textSize="16sp" />
 
         <TextView
-            android:id="@+id/txtHora"
+            android:id="@+id/txtHoraMed"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="280dp"
@@ -127,20 +124,24 @@
     </androidx.appcompat.widget.LinearLayoutCompat>
 
     <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/txtDetalles"
+        android:id="@+id/txtCantidadPastillasT"
         android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginHorizontal="5dp"
         android:background="@color/white"
-        android:hint="@string/detalle"
-        android:padding="10dp"
-        android:layout_marginTop="5dp"
+        android:fontFamily="sans-serif"
+        android:hint="@string/Cantidad"
+        android:paddingStart="15dp"
         android:textColorHint="@color/textologin"
+        android:textSize="18sp"
+        android:inputType="number"
+        app:layout_constraintTop_toBottomOf="@id/linearLayoutHora"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayoutCompat2" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnSave"
+        android:id="@+id/btnSaveMed"
         android:layout_width="180dp"
         android:layout_height="50dp"
         android:layout_marginStart="15dp"
@@ -152,10 +153,10 @@
         app:backgroundTint="@color/Blue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtDetalles" />
+        app:layout_constraintTop_toBottomOf="@id/txtCantidadPastillasT" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnCancelCita"
+        android:id="@+id/btnCancelMed"
         android:layout_width="180dp"
         android:layout_height="50dp"
         android:layout_marginEnd="15dp"
@@ -167,6 +168,6 @@
         app:backgroundTint="@color/Blue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtDetalles" />
+        app:layout_constraintTop_toBottomOf="@id/txtCantidadPastillasT" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

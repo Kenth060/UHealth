@@ -20,7 +20,8 @@ class CantidadPastillaDec : AppCompatActivity()
 
         var Id=intent.getStringExtra("Id")
         var Pastilla=intent.getStringExtra("Pastilla")
-        var Dosis=intent.getStringExtra("Dosis")
+        var Tipo=intent.getStringExtra("Tipo")
+        var Frecuencia=intent.getStringExtra("Frecuencia")
         var Hora=intent.getStringExtra("Hora")
         var Cantidad= (intent.getStringExtra("Cantidad"))?.toInt()
 
@@ -31,9 +32,9 @@ class CantidadPastillaDec : AppCompatActivity()
 
         binding.btnDecrementar.setOnClickListener {
 
-            if(Id != null && Pastilla != null  && Dosis != null  && Hora != null && Cantidad != null  )
+            if(Id != null && Pastilla != null  && Tipo != null && Frecuencia != null  && Hora != null && Cantidad != null  )
             {
-                var med = Medicamentos(Id.toLong(), Pastilla, Dosis, Hora, Cantidad)
+                var med = Medicamentos(Id.toLong(), Pastilla ,Tipo, Frecuencia, Hora, Cantidad)
                 databaseHelper(this).actualizarRecordatorios_Medicamentos(med)
 
                 binding.txtCantidadPastillas.text=(Cantidad-1).toString()

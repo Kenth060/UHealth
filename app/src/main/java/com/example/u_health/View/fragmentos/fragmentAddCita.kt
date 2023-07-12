@@ -71,7 +71,8 @@ class fragmentAddCita : Fragment()
         createNotificacionChannnel()
         binding.btnSave.setOnClickListener {
             if(binding.txtEspecialidad.text.toString()!=""&&binding.txtDoctor.text.toString()!=""&&binding.txtFecha.text.toString()!=""&&
-                binding.txtHora.text.toString()!=""){
+                binding.txtHora.text.toString()!="")
+            {
                 val Titulo = binding.txtEspecialidad.text.toString()
                 val Doctor = binding.txtDoctor.text.toString()
                 val Fecha_Cita=binding.txtFecha.text.toString()

@@ -68,5 +68,37 @@
     <string name="Cita">Agregar Citas</string>
     <string name="Peso_Detalle">Detalles sobre su Peso</string>
     <string name="Imc">Indice de Masa corporal</string>
+    <string name="Grasa">% Grasa Corporal</string>
+    <string name="clasificacion_imc">Clasificacion Indice de Masa Corporal</string>
+    <string name="imc_pesodemasiadobajo">Desnutricion</string>
+    <string name="imc_pesomuybajo">Delgadez Severa</string>
+    <string name="imc_pesobajo">Peso Bajo</string>
+    <string name="imc_pesonormal">Peso Normal</string>
+    <string name="imc_sobrepeso">Sobrepeso</string>
+    <string name="imc_obesidad1">Obsesidad I</string>
+    <string name="imc_obesidad2">Obesidad II</string>
+    <string name="imc_obesidad3">Obesidad III</string>
+    <string name="estado">Se encuentra en</string>
+    <string name="_16"><![CDATA[< 16]]></string>
+    <string name="Medicamento">Nombre del Medicamento</string>
+    <string name="Tipo_Med">Tipo de Medicamento</string>
+    <string name="Frecuencia">Frecuencia</string>
+    <string name="Cantidad">Cantidad de Medicamentos</string>
+    <string name="tratamiento">Agregar Tratamiento</string>
+
+    <string-array name="FrecuenciaList">
+        <item>Cada 6 Horas</item>
+        <item>Cada 8 Horas</item>
+        <item>Cada 12 Horas</item>
+        <item>Diario</item>
+    </string-array>
+
+    <string-array name="TipoList">
+        <item>Capsula</item>
+        <item>Jarabe</item>
+        <item>Gotas</item>
+        <item>Inyección</item>
+        <item>Supositorio</item>
+    </string-array>
 
 </resources>
