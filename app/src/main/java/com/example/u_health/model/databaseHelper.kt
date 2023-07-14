@@ -5,7 +5,7 @@ import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
-import androidx.core.content.contentValuesOf
+
 
 class databaseHelper(context: Context) : SQLiteOpenHelper( context,
     constants.DATABASE_NAME,
@@ -36,7 +36,7 @@ class databaseHelper(context: Context) : SQLiteOpenHelper( context,
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
     }
 
-    @SuppressLint("Range")
+    @SuppressLint("Range", "Recycle")
     fun getRecordatorios_Medicamentos(): MutableList<Medicamentos>
     {
         val meds: MutableList<Medicamentos> = mutableListOf()
@@ -59,7 +59,7 @@ class databaseHelper(context: Context) : SQLiteOpenHelper( context,
         return meds
     }
 
-    @SuppressLint("Range")
+    @SuppressLint("Range", "Recycle")
     fun getRecordatorios_Citas(): MutableList<Citas>
     {
         val citas: MutableList<Citas> = mutableListOf()
@@ -132,6 +132,46 @@ class databaseHelper(context: Context) : SQLiteOpenHelper( context,
             constants.ENTITY_MEDICAMENTOS,
             contentValues,
             "${constants.PROPERTY_ID}= ${meds.Id}",
+            null)
+
+        return result == constants.TRUE
+    }
+
+    fun actualizarRecordatorio_Medicamento(meds: Medicamentos): Boolean
+    {
+        val database = this.writableDatabase
+        val contentValues = ContentValues().apply {
+            put(constants.PROPERTY_PASTILLA, meds.Pastilla)
+            put(constants.PROPERTY_TIPO, meds.Tipo)
+            put(constants.PROPERTY_FRECUENCIA, meds.Frecuencia)
+            put(constants.PROPERTY_HORA, meds.Hora)
+            put(constants.PROPERTY_CANTIDAD, (meds.Cantidad))
+        }
+
+        val result = database.update(
+            constants.ENTITY_MEDICAMENTOS,
+            contentValues,
+            "${constants.PROPERTY_ID}= ${meds.Id}",
+            null)
+
+        return result == constants.TRUE
+    }
+
+    fun actualizarRecordatorio_Citas(Cita : Citas): Boolean
+    {
+        val database = this.writableDatabase
+        val contentValues = ContentValues().apply {
+            put(constants.PROPERTY_TITULO, Cita.Titulo)
+            put(constants.PROPERTY_MEDICO, Cita.Medico)
+            put(constants.PROPERTY_FECHA, Cita.Fecha)
+            put(constants.PROPERTY_HORA, Cita.Hora)
+            put(constants.PROPERTY_DETALLES, Cita.Detalles)
+        }
+
+        val result = database.update(
+            constants.ENTITY_CITAS,
+            contentValues,
+            "${constants.PROPERTY_ID}= ${Cita.Id}",
             null)
 
         return result == constants.TRUE

@@ -34,7 +34,7 @@
     <string name="title_notifications">Notifications</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="title_recordatorios">Recordatorios</string>
+    <string name="title_recordatorios">Tratamiento</string>
     <string name="title_informacion">Informacion</string>
     <string name="title_mapa">Mapa</string>
     <string name="strRecordatorio">Recordatorio</string>
@@ -85,6 +85,11 @@
     <string name="Frecuencia">Frecuencia</string>
     <string name="Cantidad">Cantidad de Medicamentos</string>
     <string name="tratamiento">Agregar Tratamiento</string>
+    <string name="strDialogTitulo">¿Está seguro de eliminar este Recordatorio?</string>
+    <string name="strDialogTitulos">¿Está seguro de eliminar esta Cita?</string>
+    <string name="strAceptar">Aceptar</string>
+    <string name="strCancelar">Cancelar</string>
+    <string name="actualizar">Actualizar</string>
 
     <string-array name="FrecuenciaList">
         <item>Cada 6 Horas</item>

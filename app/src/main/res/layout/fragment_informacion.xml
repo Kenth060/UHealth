@@ -38,7 +38,7 @@
                 android:orientation="vertical">
 
                 <com.airbnb.lottie.LottieAnimationView
-                    android:id="@+id/lottieAnimationView"
+                    android:id="@+id/btnNotLottie"
                     android:layout_width="@dimen/tamlottifilesinfo"
                     android:layout_height="@dimen/tamlottifilesinfo"
                     app:layout_constraintEnd_toEndOf="parent"

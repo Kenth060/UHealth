@@ -8,7 +8,7 @@ import com.example.u_health.R
 
 class PastillasViewHolder(view: View) : RecyclerView.ViewHolder(view)
 {
-    val Nombre_Pastilla = view.findViewById<TextView>(R.id.txtNombrePastilla)
+    val Nombre_Pastilla = view.findViewById<TextView>(R.id.txtNombrePastillaInfo)
 
 
 

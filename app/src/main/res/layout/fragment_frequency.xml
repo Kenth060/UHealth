@@ -9,7 +9,7 @@
     tools:context=".View.fragmentos.Frequency">
 
     <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/lottieAnimationView"
+        android:id="@+id/btnNotLottie"
         android:layout_width="242dp"
         android:layout_height="144dp"
         android:layout_gravity="center_horizontal"

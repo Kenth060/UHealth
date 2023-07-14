@@ -29,6 +29,9 @@
         <action
             android:id="@+id/action_navigation_citas_to_fragment_Recordatorio_Medico"
             app:destination="@id/fragment_Recordatorio_Medico" />
+        <action
+            android:id="@+id/action_navigation_citas_to_editar_citas"
+            app:destination="@id/editar_citas" />
     </fragment>
 
     <fragment
@@ -126,6 +129,11 @@
         android:name="com.example.u_health.View.fragmentos.Tratamiento"
         android:label="fragment_tratamiento"
         tools:layout="@layout/fragment_tratamiento" />
+    <fragment
+        android:id="@+id/editar_citas"
+        android:name="com.example.u_health.View.fragmentos.Editar_citas"
+        android:label="fragment_editar_citas"
+        tools:layout="@layout/fragment_editar_citas" />
 
 
 </navigation>

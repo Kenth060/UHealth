@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.u_health.R
 import com.example.u_health.model.Citas
+import com.example.u_health.model.Medicamentos
 
 
 class AdapterCitas (var citasList: MutableList<Citas>, val citasListener: CitasListener) : RecyclerView.Adapter<CitasViewHolder>()
@@ -24,9 +25,24 @@ class AdapterCitas (var citasList: MutableList<Citas>, val citasListener: CitasL
         holder.itemView.setOnClickListener {
             citasListener.onCitaClicked(item)
         }
+
+        holder.itemView.setOnLongClickListener {
+            citasListener.EliminarCita(item)
+            return@setOnLongClickListener false
+        }
+
+        holder.BotonEditar.setOnClickListener {
+            citasListener.EditarCita(item)
+        }
+
     }
 
     override fun getItemCount(): Int = citasList.size
 
+    fun Delete(C: Citas)
+    {
+        citasList.remove(C)
+        notifyDataSetChanged()
+    }
 
 }

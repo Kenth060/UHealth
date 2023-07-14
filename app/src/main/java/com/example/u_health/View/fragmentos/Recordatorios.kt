@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
@@ -17,12 +19,15 @@ import com.example.u_health.R
 import com.example.u_health.databinding.FragmentRecordatoriosBinding
 import com.example.u_health.model.Medicamentos
 import com.example.u_health.model.databaseHelper
+import com.google.android.material.snackbar.Snackbar
 
 
 class Recordatorios : Fragment(),RecordatoriosListener
 {
     private var _binding: FragmentRecordatoriosBinding? = null
     private val binding get() = _binding!!
+
+    private lateinit var AdapterRecordatorios:AdapterRecordatorios
 
 
     override fun onCreate(savedInstanceState: Bundle?)
@@ -59,19 +64,42 @@ class Recordatorios : Fragment(),RecordatoriosListener
     {
         val rv = binding.rvRecordatorios
         rv.layoutManager = LinearLayoutManager(requireContext())
-        rv.adapter=AdapterRecordatorios(databaseHelper(requireContext()).getRecordatorios_Medicamentos(),this)
+        AdapterRecordatorios= AdapterRecordatorios(databaseHelper(requireContext()).getRecordatorios_Medicamentos(),this)
+        rv.adapter=AdapterRecordatorios
     }
 
-    override fun onRecordatorioClicked(M: Medicamentos)
+    override fun EliminarRecordatorio(M: Medicamentos)
     {
-        view?.let { Navigation.findNavController(it).navigate(R.id.vista_medicamento) }
-        val Preferencias: SharedPreferences? = context?.getSharedPreferences("Datos_Recordatorio", Context.MODE_PRIVATE)
-        val editor = Preferencias?.edit()
-        editor?.putString("Id", M.Id.toString())
-        editor?.putString("Pastilla", M.Pastilla)
-        editor?.putString("Cantidad", M.Cantidad.toString())
-        editor?.putString("Dosis", M.Frecuencia)
-        editor?.putString("Hora", M.Hora)
-        editor?.apply()
+        val builder=AlertDialog.Builder(requireContext())
+            .setTitle(getString(R.string.strDialogTitulo))
+            .setPositiveButton(getString(R.string.strAceptar)) { dialogInterface, i ->
+                if (databaseHelper(requireContext()).deleteRecordatorios_Medicamentos(M))
+                {
+                    AdapterRecordatorios.Delete(M)
+                    Snackbar.make(binding.root, "Se elimino el Recordatorio", Snackbar.LENGTH_SHORT).show()
+                } else {
+                    Snackbar.make(binding.root, "Error al eliminar", Snackbar.LENGTH_SHORT).show()
+                }
+            }
+            .setNegativeButton(getString(R.string.strCancelar),null)
+        builder.create().show()
+
     }
+
+        override fun EditarRecordatorio(M: Medicamentos)
+        {
+            view?.let { Navigation.findNavController(it).navigate(R.id.vista_medicamento) }
+            val Preferencias: SharedPreferences? = context?.getSharedPreferences("Datos_Recordatorio", Context.MODE_PRIVATE)
+            val editor = Preferencias?.edit()
+            editor?.putString("Id", M.Id.toString())
+            editor?.putString("Pastilla", M.Pastilla)
+            editor?.putString("Tipo", M.Tipo)
+            editor?.putString("Frecuencia", M.Frecuencia)
+            editor?.putString("Cantidad", M.Cantidad.toString())
+            editor?.putString("Hora", M.Hora)
+            editor?.apply()
+        }
+
+
+
 }

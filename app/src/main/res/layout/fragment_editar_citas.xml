@@ -2,106 +2,106 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/GrisClarito"
-    tools:context=".View.fragmentos.vista_medicamento">
+    tools:context=".View.fragmentos.Editar_citas"
+    android:background="@color/GrisClarito">
 
     <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/abRecordatoriosDetalles"
+        android:id="@+id/abActualizarCitas"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/Blue"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.appcompat.widget.Toolbar
-            android:id="@+id/tbRecordatoriosDetalles"
+            android:id="@+id/tb_Actualizarcitas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/Blue"
-            app:titleTextColor="@color/textologin" />
+            tools:layout_editor_absoluteX="3dp"
+            tools:layout_editor_absoluteY="404dp" />
+
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/txtMedicamentoAct"
+        android:id="@+id/txtEspecialidadActualizar"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_marginTop="7dp"
-        android:layout_marginHorizontal="5dp"
+        android:layout_marginTop="5dp"
+        android:paddingStart="15dp"
         android:background="@color/white"
         android:fontFamily="sans-serif"
-        android:hint="@string/Medicamento"
-        android:paddingStart="15dp"
+        android:hint="@string/especialidad"
         android:textColorHint="@color/textologin"
         android:textSize="18sp"
-        app:layout_constraintTop_toBottomOf="@id/abRecordatoriosDetalles"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-        android:id="@+id/bckTiposMedsAct"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginTop="7dp"
-        android:hint="@string/Tipo_Med"
-        android:textColorHint="@color/textologin"
-        app:boxBackgroundColor="@color/GrisClarito"
-        app:boxStrokeColor="@color/Blue"
-        app:hintTextAppearance="@style/TextAppearance.AppCompat.Small"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txtMedicamentoAct">
+        app:layout_constraintTop_toBottomOf="@id/abActualizarCitas" />
 
-        <AutoCompleteTextView
-            android:id="@+id/cbTipoMedsAct"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginHorizontal="5dp"
-            android:layout_weight="1"
-            android:inputType="none" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-        android:id="@+id/bckFrecuenciaMedAct"
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/txtDoctorActualizar"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_marginTop="7dp"
-        android:hint="@string/Frecuencia"
+        android:layout_marginTop="5dp"
+        android:paddingStart="15dp"
+        android:background="@color/white"
+        android:hint="@string/doctor"
         android:textColorHint="@color/textologin"
-        app:boxBackgroundColor="@color/GrisClarito"
-        app:boxStrokeColor="@color/Blue"
-        app:hintTextAppearance="@style/TextAppearance.AppCompat.Small"
-        app:layout_constraintTop_toBottomOf="@id/bckTiposMedsAct">
-
-        <AutoCompleteTextView
-            android:id="@+id/cbFrecuenciaMedAct"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginHorizontal="5dp"
-            android:layout_weight="1"
-            android:inputType="none" />
-
-    </com.google.android.material.textfield.TextInputLayout>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtEspecialidadActualizar" />
 
     <androidx.appcompat.widget.LinearLayoutCompat
-        android:id="@+id/linearLayoutHoraAct"
+        android:id="@+id/linearLayoutCompatActualizar"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_marginTop="7dp"
-        android:layout_marginHorizontal="5dp"
+        android:layout_marginTop="5dp"
         android:background="@color/white"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/bckFrecuenciaMedAct">
+        app:layout_constraintTop_toBottomOf="@id/txtDoctorActualizar">
 
         <Button
-            android:id="@+id/btnHora"
+            android:id="@+id/fechaActualizar"
+            style="@style/ButtonNoBorder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/borde_null"
+            android:text="@string/fecha"
+            android:textColor="@color/textologin"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/txtFechaActualizar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="230dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/dd_mm_yyyy"
+            android:textColor="@color/textologin"
+            android:textSize="16sp" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/linearLayoutCompat2Actualizar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutCompatActualizar">
+
+        <Button
+            android:id="@+id/horaActualizar"
             style="@style/ButtonNoBorder"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -113,7 +113,7 @@
             android:textSize="16sp" />
 
         <TextView
-            android:id="@+id/txtHoraMedAct"
+            android:id="@+id/txtHoraActualizar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="280dp"
@@ -124,27 +124,24 @@
     </androidx.appcompat.widget.LinearLayoutCompat>
 
     <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/txtCantidadPastillasTAct"
+        android:id="@+id/txtDetallesActualizar"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginTop="7dp"
-        android:layout_marginHorizontal="5dp"
+        android:layout_height="120dp"
         android:background="@color/white"
-        android:fontFamily="sans-serif"
-        android:hint="@string/Cantidad"
-        android:paddingStart="15dp"
+        android:hint="@string/detalle"
+        android:padding="10dp"
+        android:layout_marginTop="5dp"
         android:textColorHint="@color/textologin"
-        android:textSize="18sp"
-        android:inputType="number"
-        app:layout_constraintTop_toBottomOf="@id/linearLayoutHoraAct"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutCompat2Actualizar" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnActMed"
+        android:id="@+id/btnSaveActualizar"
         android:layout_width="180dp"
         android:layout_height="50dp"
         android:layout_marginStart="15dp"
+        android:layout_marginEnd="5dp"
         android:layout_marginBottom="100dp"
         android:background="@drawable/background_button"
         android:text="@string/actualizar"
@@ -152,13 +149,15 @@
         android:textSize="18sp"
         app:backgroundTint="@color/Blue"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnCancelCitaActualizar"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txtCantidadPastillasTAct" />
+        app:layout_constraintTop_toBottomOf="@+id/txtDetallesActualizar" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnCancelMedAct"
+        android:id="@+id/btnCancelCitaActualizar"
         android:layout_width="180dp"
         android:layout_height="50dp"
+        android:layout_marginStart="5dp"
         android:layout_marginEnd="15dp"
         android:layout_marginBottom="100dp"
         android:background="@drawable/background_button"
@@ -168,13 +167,8 @@
         app:backgroundTint="@color/Blue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txtCantidadPastillasTAct" />
-
-
-
-
+        app:layout_constraintStart_toEndOf="@id/btnSaveActualizar"
+        app:layout_constraintTop_toBottomOf="@+id/txtDetallesActualizar" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-
-

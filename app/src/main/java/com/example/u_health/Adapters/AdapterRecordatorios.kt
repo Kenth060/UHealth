@@ -2,6 +2,7 @@ package com.example.u_health.Adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.u_health.R
 import com.example.u_health.model.Medicamentos
@@ -21,10 +22,22 @@ class AdapterRecordatorios(var recordatoriosList: MutableList<Medicamentos>, val
         holder.render(item)
 
         holder.itemView.setOnClickListener {
-           recordatoriosListener.onRecordatorioClicked(item)
+           recordatoriosListener.EliminarRecordatorio(item)
         }
+
+
+        holder.BotonEditar.setOnClickListener {
+            recordatoriosListener.EditarRecordatorio(item)
+        }
+
     }
 
     override fun getItemCount(): Int = recordatoriosList.size
+
+    fun Delete(meds: Medicamentos)
+    {
+        recordatoriosList.remove(meds)
+        notifyDataSetChanged()
+    }
 
 }

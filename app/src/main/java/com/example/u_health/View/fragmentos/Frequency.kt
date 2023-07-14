@@ -32,6 +32,7 @@ import com.example.u_health.model.Medicamentos
 import com.example.u_health.model.databaseHelper
 import java.util.Calendar
 import java.util.Date
+import java.util.concurrent.TimeUnit
 import kotlin.properties.Delegates
 
 class Frequency : Fragment() {
@@ -195,14 +196,17 @@ class Frequency : Fragment() {
         }
         return true
     }
+    @SuppressLint("WrongConstant")
     private fun showTimePicker() {
         val timePicker = TimePickerFragment { hour, minute ->
-            onTimeSelected(hour, minute as Int)
+            onTimeSelected(hour.toString(), minute as String)
         }
+        timePicker.setStyle(R.style.Timepicker,R.style.Timepicker)
         timePicker.show(requireFragmentManager(), "timePicker")
     }
 
-    private fun onTimeSelected(hour: Int, minute: Int) {
+    private fun onTimeSelected(hour: String, minute: String)
+    {
         binding.txtHora.text = "$hour : $minute"
         val sharedPreferences = context?.getSharedPreferences("mi_pref", Context.MODE_PRIVATE)
         val editor = sharedPreferences?.edit()

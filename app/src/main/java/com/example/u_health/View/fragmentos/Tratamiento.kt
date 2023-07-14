@@ -31,6 +31,7 @@ import com.google.firebase.ktx.app
 import java.util.Calendar
 import java.util.Date
 
+@SuppressLint("StaticFieldLeak")
 private var fbinding: FragmentTratamientoBinding? = null
 private val binding get() = fbinding!!
 private var Id_Recordatorio=0
@@ -91,22 +92,27 @@ class Tratamiento : Fragment()
                 scheduleNotification()
                 val Medicamento = binding.txtMedicamento.text.toString()
                 val Hora= binding.txtHoraMed.text.toString()
-                val Cantidad = binding.txtCantidadPastillasT.text.toString().toInt()
+                val Cantidad = binding.txtCantidadPastillasT.text.toString()
 
-                var med= Medicamentos()
-                med.Id=Id_Recordatorio.toLong()
-                med.Pastilla=Medicamento
-                med.Tipo=Tipo
-                med.Frecuencia= Frecuencia
-                med.Hora=Hora
-                med.Cantidad=Cantidad
-                databaseHelper(requireContext()).insertarRecordatorios_Medicamentos(med)
+                if (Medicamento != "" && Cantidad != "" && Frecuencia != "" && Tipo != "")
+                {
+                    val med = Medicamentos()
+                    med.Id = Id_Recordatorio.toLong()
+                    med.Pastilla = Medicamento
+                    med.Tipo = Tipo
+                    med.Frecuencia = Frecuencia
+                    med.Hora = Hora
+                    med.Cantidad = Cantidad.toInt()
+                    databaseHelper(requireContext()).insertarRecordatorios_Medicamentos(med)
 
-                Edit?.putInt("Id_Recordatorios",Id_Recordatorio)
-                Edit?.apply()
+                    Edit?.putInt("Id_Recordatorios", Id_Recordatorio)
+                    Edit?.apply()
 
-                Toast.makeText(requireContext(), "Guardado", Toast.LENGTH_SHORT).show()
-                Navigation.findNavController(view).navigate(R.id.navigation_recordatorios)
+                    Toast.makeText(requireContext(), "Guardado", Toast.LENGTH_SHORT).show()
+                    Navigation.findNavController(view).navigate(R.id.navigation_recordatorios)
+                }
+                else
+                {Toast.makeText(requireContext(), "Rellene los datos", Toast.LENGTH_SHORT).show()}
             }
             else
             {
@@ -124,12 +130,31 @@ class Tratamiento : Fragment()
 
     private fun showTimePicker() {
         val timePicker = TimePickerFragment { hour, minute ->
-            onTimeSelected(hour, minute as Int)
+
+            var hora=""
+            var minuto=""
+
+            if(hour in 0..9)
+            { hora="0$hour" }
+            else
+            { hora=hour.toString() }
+
+            if(minute in 0..9)
+            { minuto="0$minute" }
+            else
+            { minuto=minute.toString() }
+
+
+            onTimeSelected(hora, minuto)
+
+
         }
+
         timePicker.show(requireFragmentManager(), "timePicker")
     }
 
-    private fun onTimeSelected(hour: Int, minute: Int) {
+    @SuppressLint("SetTextI18n")
+    private fun onTimeSelected(hour: String, minute: String) {
         binding.txtHoraMed.text = "$hour : $minute"
         val sharedPreferences = context?.getSharedPreferences("mi_pref", Context.MODE_PRIVATE)
         val editor = sharedPreferences?.edit()

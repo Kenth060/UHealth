@@ -42,11 +42,13 @@
     </style>
 
     <style name="ButtonTextAppearance" parent="TextAppearance.AppCompat.Button">
-        <item name="android:textColor">?attr/colorControlNormal</item>
+        <item name="android:textColor">@color/textologin</item>
     </style>
 
     <style name="Timepicker" parent="android:Theme.Material.Light.Dialog">
-        <item name="android:colorAccent">#3e838c</item>
+        <item name="android:colorAccent">@color/DarkBlue</item>
+        <item name="android:backgroundTint">@color/DarkBlue</item>
     </style>
+
 
 </resources>

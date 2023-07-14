@@ -48,7 +48,7 @@ class Informacion_Detalle : Fragment()
         val Pastilla=  Prefencias?.getString("Pastilla","")
         val Tipo=  Prefencias?.getString("Tipo","")
 
-        val Nombre_Pastilla=binding.txtNombrePastilla
+        val Nombre_Pastilla=binding.txtNombrePastillaDet
         val Informacion=binding.txtInfo
         val usos=binding.txtUsosContent
         val Riesgos=binding.txtRiesgos

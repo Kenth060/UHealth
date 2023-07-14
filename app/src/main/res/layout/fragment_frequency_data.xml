@@ -10,7 +10,7 @@
     tools:context=".View.fragmentos.FrequencyData">
 
     <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/lottieAnimationView"
+        android:id="@+id/btnNotLottie"
         android:layout_width="246dp"
         android:layout_height="144dp"
         android:layout_marginTop="44dp"
@@ -33,7 +33,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.25"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lottieAnimationView" />
+        app:layout_constraintTop_toBottomOf="@+id/btnNotLottie" />
 
     <TextView
         android:id="@+id/textView2"
